@@ -1,4 +1,5 @@
 import Layout from '@/Components/Common/Layout'
+import Home from '@/Components/Views/Home'
 import Head from 'next/head'
 import React from 'react'
 
@@ -16,7 +17,7 @@ const index = () => {
           key="desc"
         />
       </Head>
-      <Layout />
+      <Home />
     </main>
   )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import Container from './Container';
 import { IoIosArrowUp } from 'react-icons/io';
+import Link from 'next/link';
 
 const Navbar = () => {
 
@@ -9,22 +10,22 @@ const Navbar = () => {
 
     return (
         <nav>
-            <div className="bg-white sticky top-0 py-4">
+            <div className="bg-white sticky top-0 py-5">
                 <Container>
                     <div className='flex items-center justify-between'>
                         <div>
-                            <Image src={'/logo.svg'} alt={'logo'} width={120} height={120} />
+                            <Image src={'/primarylogo.svg'} alt={'logo'} width={120} height={120} />
                         </div>
                         <ul className="flex space-x-7">
                             {links.map((link, index) => (
                                 <li
                                     key={index}
-                                    className="relative group "
+                                    className="links relative group "
                                     onMouseLeave={() => setActiveDropdown(null)}
                                 >
-                                    <button
+                                    <span
                                         onMouseOver={() => setActiveDropdown(index)}
-                                        className="text-[#000000] font-light text-lg flex items-center hover:text-[#D48D78] transition-all duration-500"
+                                        className=" text-[#000000] font-light text-lg flex items-center hover:text-[#D48D78] transition-all duration-500"
                                     >
                                         {link.mainLink}
                                         {(link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
@@ -33,22 +34,22 @@ const Navbar = () => {
                                                     }`}
                                             />
                                         )}
-                                    </button>
-                                    <div className={` transition-all  duration-500 ${activeDropdown === index ? 'dropdown--show' : 'dropdown--hide'
+                                    </span>
+                                    <div className={` transition-all  duration-500  ${activeDropdown === index ? 'dropdown--show' : 'dropdown--hide'
                                         }`}>
                                         {link.innerLink && activeDropdown === index && (
                                             <ul
-                                                className={`absolute z-[1000] text-sm shadow  ${link.mainLink === 'Lips'
-                                                    ? '-left-5 w-32 pl-2 py-3 dropdown--expanded'
-                                                    : '-left-3 w-32 pl-2 py-3 dropdown--expanded'
+                                                className={`absolute z-[1000] text-sm shadow bg-white ${link.mainLink === 'Lips'
+                                                    ? '-left-7 w-24 pl-4 py-3 dropdown--expanded'
+                                                    : '-left-8 w-32 pl-4 py-3 dropdown--expanded'
                                                     }`}
                                             >
                                                 {link.innerLink.map((item, innerIndex) => (
-                                                    <li key={innerIndex}>
-                                                        <p className="cursor-pointer hover:text-[#D48D78] pb-1.5">
+                                                    <div className='links mb-2' key={innerIndex}>
+                                                        <span className="cursor-pointer hover:text-[#D48D78] pb-1.5">
                                                             {item.link}
-                                                        </p>
-                                                    </li>
+                                                        </span>
+                                                    </div>
                                                 ))}
                                             </ul>
                                         )}

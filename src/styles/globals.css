@@ -30,3 +30,29 @@ body {
 .dropdown--expanded {
   height: auto;
 }
+
+
+.links span {
+  position: relative;
+  margin-right: 10px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.links span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #D48D78;
+  transition: .3s;
+  ;
+}
+
+.links span:hover::before {
+  width: 100%;
+  background-color: #D48D78;
+}
