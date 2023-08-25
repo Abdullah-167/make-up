@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Container from './Container';
 import { IoIosArrowUp } from 'react-icons/io';
 import Link from 'next/link';
@@ -7,25 +7,47 @@ import Link from 'next/link';
 const Navbar = () => {
 
     const [activeDropdown, setActiveDropdown] = useState(null);
+    const [scrollDown, setScrollDown] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY >= 50) {
+                setScrollDown(true);
+            } else {
+                setScrollDown(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <nav>
-            <div className="bg-white sticky top-0 py-5">
+            <div className={`fixed top-0 py-5 w-full z-[1000] transition-all duration-500  ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
                 <Container>
                     <div className='flex items-center justify-between'>
-                        <div>
-                            <Image src={'/primarylogo.svg'} alt={'logo'} width={120} height={120} />
+                        <div className=''>
+                            <Image
+                                src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
+                                alt={'logo'}
+                                width={120}
+                                height={120}
+                                className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
+                            />
                         </div>
                         <ul className="flex space-x-7">
                             {links.map((link, index) => (
                                 <li
                                     key={index}
-                                    className="links relative group "
+                                    className={` relative group ${scrollDown ? 'links-two' : 'links'}`}
                                     onMouseLeave={() => setActiveDropdown(null)}
                                 >
                                     <span
                                         onMouseOver={() => setActiveDropdown(index)}
-                                        className=" text-[#000000] font-light text-lg flex items-center hover:text-[#D48D78] transition-all duration-500"
+                                        className={`text-[#000000] font-light text-lg flex items-center  transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                     >
                                         {link.mainLink}
                                         {(link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
@@ -39,14 +61,14 @@ const Navbar = () => {
                                         }`}>
                                         {link.innerLink && activeDropdown === index && (
                                             <ul
-                                                className={`absolute z-[1000] text-sm shadow bg-white ${link.mainLink === 'Lips'
+                                                className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Lips'
                                                     ? '-left-7 w-24 pl-4 py-3 dropdown--expanded'
                                                     : '-left-8 w-32 pl-4 py-3 dropdown--expanded'
                                                     }`}
                                             >
                                                 {link.innerLink.map((item, innerIndex) => (
-                                                    <div className='links mb-2' key={innerIndex}>
-                                                        <span className="cursor-pointer hover:text-[#D48D78] pb-1.5">
+                                                    <div className={` mb-2 ${scrollDown ? 'links-two' : 'links'}`} key={innerIndex}>
+                                                        <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
                                                             {item.link}
                                                         </span>
                                                     </div>
@@ -59,7 +81,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                 </Container>
-            </div>
+            </div >
         </nav >
     );
 };

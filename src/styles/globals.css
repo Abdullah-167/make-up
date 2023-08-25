@@ -7,6 +7,12 @@
 @tailwind utilities;
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 
 body {
@@ -53,6 +59,114 @@ body {
 }
 
 .links span:hover::before {
+  width: 100%;
+  background-color: #D48D78;
+}
+
+
+.links-two span {
+  position: relative;
+  margin-right: 10px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.links-two span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: black;
+  transition: .3s;
+  ;
+}
+
+.links-two span:hover::before {
+  width: 100%;
+  background-color: black;
+}
+
+.keen-slider__slide:hover .effect {
+  animation: translateAnimation 0.5s ease forwards;
+  display: block;
+
+}
+
+
+.keen-slider__slide .effect {
+  display: none;
+
+}
+
+@keyframes translateAnimation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(500px);
+  }
+}
+
+
+.slide-scale>image {
+  transform: scaleY(1.5);
+  transition: transform 0.3s;
+}
+
+.btn-visible span {
+  visibility: hidden;
+
+}
+
+.btn-visible:hover span {
+  visibility: visible;
+
+}
+
+.image-transition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+
+
+.hack span {
+  position: relative;
+  margin-right: 10px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+.hack:hover span {
+  position: relative;
+  margin-right: 10px;
+  text-decoration: none;
+  padding-bottom: 5px;
+  cursor: pointer;
+  color: #D48D78;
+  transition: .5s;
+
+
+}
+
+.hack span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #D48D78;
+  transition: .5s;
+
+}
+
+.hack:hover span::before {
   width: 100%;
   background-color: #D48D78;
 }
