@@ -14,7 +14,7 @@ const Home = () => {
             <SkinCare />
             <LatestBlog />
             <OurToppic />
-            {/* <Video /> */}
+            <Video />
             <LifeHack />
         </Layout>
     )

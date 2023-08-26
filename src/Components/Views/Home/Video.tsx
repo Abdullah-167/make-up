@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 
-const Video = () => {
-    const videoRef = useRef(null);
+const Video: React.FC = () => {
+    const videoRef = useRef<HTMLVideoElement | null>(null);
 
     const handleMouseEnter = () => {
         if (videoRef.current) {
@@ -17,15 +17,16 @@ const Video = () => {
     };
 
     return (
-        <div className='w-full max-h-[300px]'>
+        <div className='w-full  my-20'>
             <video
                 ref={videoRef}
-                src="/girl.mp4"
+                src="/kit.mp4"
+                className='mx-auto'
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             />
         </div>
     );
-}
+};
 
 export default Video;

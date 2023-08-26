@@ -13,12 +13,12 @@ const OurToppic = () => {
 
     return (
         <section>
-            <div className='bg-[#EBEEF6] py-20'>
+            <div className='bg-[#EBEEF6] py-12 sm:py-20'>
                 <Container>
                     <div>
-                        <h2 className='text-5xl text-black pb-10'>Our Latest Topics</h2>
-                        <div className='grid grid-cols-2 gap-10 items-center'>
-                            <div className='pt-52'>
+                        <h2 className=' text-3xl sm:text-5xl text-black pb-10'>Our Latest Topics</h2>
+                        <div className='grid md:grid-cols-2 gap-10 items-center'>
+                            <div className='md:pt-52'>
                                 {data.map((item, index) => (
                                     <div
                                         key={index}
@@ -26,7 +26,7 @@ const OurToppic = () => {
                                         onMouseEnter={() => handleMouseEnter(item.type)}
                                     >
                                         <p
-                                            className={` transition-all duration-500 cursor-pointer font-light ${hoveredType === item.type ? 'text-black' : 'text-[#CFD1D7]'} text-5xl whitespace-nowrap`}
+                                            className={` text-2xl sm:text-3xl md:text-5xl whitespace-nowrap transition-all duration-500 cursor-pointer font-light ${hoveredType === item.type ? 'text-black' : 'text-[#CFD1D7]'} `}
                                         >
                                             {item.type}
                                         </p>
@@ -50,7 +50,7 @@ const OurToppic = () => {
                             <Image
                                 src={getImageForType(hoveredType) || defaultImage}
                                 alt={'category-img'}
-                                className=' pointer-events-none'
+                                className=' pointer-events-none md:flex hidden'
                                 width={500}
                                 height={500}
                             />
