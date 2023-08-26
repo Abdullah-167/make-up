@@ -15,14 +15,14 @@ const LatestBlog = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [loaded, setLoaded] = useState(false)
     const [sliderRef, instanceRef] = useKeenSlider({
-        loop: true,
-        renderMode: "performance",
         breakpoints: {
             "(min-width: 768px)": {
                 slides: { perView: 2, spacing: 5 },
             },
             "(min-width: 1024px)": {
-                slides: { perView: 3, spacing: 10 },
+                slides: {
+                    perView: 3, spacing: 10
+                },
             },
         },
         slides: {
@@ -69,7 +69,7 @@ const LatestBlog = () => {
                                     <p className="font-medium text-2xl sm:text-3xl pb-2 text-white">{item.heading}</p>
                                     <p className="font-medium text-sm text-white pb-4">{item.des}</p>
                                     <div className=" flex gap-2 flex-wrap items-center text-ellipsis">
-                                                                            <Button
+                                        <Button
                                             btnText={item.readNow}
                                             borderRadius={'10px'}
                                             padding={'3px 15px '}

@@ -48,7 +48,6 @@ const Navbar: React.FC = () => {
     }, []);
 
 
-
     return (
         <nav>
             <div className={`fixed top-0 py-5 w-full z-[1000] transition-all duration-500  ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>

@@ -13,10 +13,10 @@ const Instagram = () => {
     return (
         <section>
             <Container>
-                <div className='py-20'>
+                <div className='pb-20'>
                     <div className='flex justify-between items-center'>
                         <span className='text-[42px] text-center sm:text-left'>
-                            Visit Our Pinterest
+                            Visit Our Pins
                         </span>
                         <div className="relative cursor-pointer inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden  text-[#D48D78] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 group">
                             <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out group-hover:h-full"></span>
