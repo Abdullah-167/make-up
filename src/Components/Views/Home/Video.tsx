@@ -5,7 +5,6 @@ const Video: React.FC = () => {
 
     const handleMouseEnter = () => {
         if (videoRef.current) {
-            videoRef.current.currentTime = 0;
             videoRef.current.play();
         }
     };

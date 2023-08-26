@@ -6,6 +6,7 @@ import LatestBlog from './LatestBlog'
 import OurToppic from './OurToppic'
 import Video from './Video'
 import LifeHack from './LifeHack'
+import Instagram from '@/Components/Common/Instagram'
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <OurToppic />
             <Video />
             <LifeHack />
+            <Instagram />
         </Layout>
     )
 }
