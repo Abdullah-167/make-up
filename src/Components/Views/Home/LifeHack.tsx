@@ -9,7 +9,6 @@ const LifeHack = () => {
     const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
 
-
     return (
         <section>
             <Container>
