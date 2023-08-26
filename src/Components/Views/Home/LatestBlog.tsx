@@ -55,7 +55,7 @@ const LatestBlog = () => {
                                 <div className="relative slide-scale">
                                     <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md z-[100]"></div>
                                     <Image
-                                        className="flex justify-center mx-auto rounded-md transform transition-transform hover:scale-75 z-[1000]"
+                                        className="flex max-h-[468px] min-h-[468px] object-cover justify-center mx-auto rounded-md transform transition-transform hover:scale-75 z-[1000]"
                                         src={item.img}
                                         alt={"slider-images"}
                                         width={700}
@@ -137,49 +137,49 @@ const data = [
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/imgfour.png',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/womenmakeup.webp',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/phithree.webp',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/women3.webp',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/phione.webp',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/beautifullgirl.jpg',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
         allBlogs: 'All Blogs'
     },
     {
-        img: '/style.jpg',
+        img: '/aunt.jpg',
         heading: "Planet Museum",
         des: 'Best relaxtion facilities with welcome',
         readNow: 'Read Now',
