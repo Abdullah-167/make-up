@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
                                 className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
                             />
                         </div>
-                        <ul className="flex space-x-7 nav-links">
+                        <ul className="flex gap-4 nav-links">
                             {links.map((link, index) => (
                                 <li
                                     key={index}
@@ -82,10 +82,10 @@ const Navbar: React.FC = () => {
                                                 setIsFoundationHovered(true); // Step 1: Set the state when hovering over the "Foundation" link
                                             }
                                         }}
-                                        className={`text-[#000000] font-light text-lg flex items-center  transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                        className={`text-[#000000] font-extralight text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                     >
                                         {link.mainLink}
-                                        {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
+                                        {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (
                                             <IoIosArrowUp
                                                 className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
                                             />
@@ -95,9 +95,9 @@ const Navbar: React.FC = () => {
                                         }`}>
                                         {link.innerLink && activeDropdown === index && (
                                             <ul
-                                                className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Lips'
-                                                    ? '-left-7 w-24 pl-4 py-3 dropdown--expanded'
-                                                    : '-left-8 w-32 pl-4 py-3 dropdown--expanded'
+                                                className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Makeup Tutorials'
+                                                    ? '-left-1.5 w-40 pl-4 py-3 dropdown--expanded'
+                                                    : ''
                                                     }`}
                                             >
                                                 {link.innerLink.map((item, innerIndex) => (
@@ -111,9 +111,9 @@ const Navbar: React.FC = () => {
                                         )}
                                         {link.makeUp && (
                                             <ul
-                                                className={`absolute z-[1000] text-sm shadow -left-[130px] lg:-left-[300px] w-[850px] pl-4 py-3  ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                                className={`mega-menu pt-7 z-[1000] text-sm shadow w-[870px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
                                             >
-                                                <div className=' grid grid-cols-6 gap-5 px-5'>
+                                                <div className=' flex justify-evenly'>
                                                     {link.innerMakeUp?.map((item, idx) => {
                                                         return (
                                                             <div className=''
@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
                                     className={`text-[#000000] cursor-pointer z-[20] font-light text-lg flex items-center  transition-all duration-500 ${index === 0 ? 'pl-7' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                 >
                                     {link.mainLink}
-                                    {(link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
+                                    {(link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tips') && (
                                         <IoIosArrowUp
                                             className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'
                                                 }`}
@@ -203,6 +203,26 @@ const Navbar: React.FC = () => {
 export default Navbar;
 
 const links = [
+
+    {
+        mainLink: 'Lips',
+        makeUp: false,
+        innerLink: [
+            { link: 'Lip Gloss', url: '/lips/lipgloss' },
+            { link: 'Lip liner', url: '/lips/lipliner' },
+            { link: 'Lipstick', url: '/lips/lipstick' },
+        ],
+    },
+    {
+        mainLink: 'Eyes',
+        makeUp: false,
+        innerLink: [
+            { link: 'Eyeliner' },
+            { link: 'Mascara' },
+            { link: 'Kajal' },
+            { link: 'Eye Shadow' },
+        ],
+    },
     {
         mainLink: 'All MakeUp',
         makeUp: true,
@@ -276,8 +296,12 @@ const links = [
         ]
     },
     {
-        mainLink: 'Lips',
+        mainLink: 'Makeup Eraser',
         makeUp: false,
+
+    },
+    {
+        mainLink: 'Makeup Tutorials',
         innerLink: [
             { link: 'Lip Gloss', url: '/lips/lipgloss' },
             { link: 'Lip liner', url: '/lips/lipliner' },
@@ -285,17 +309,7 @@ const links = [
         ],
     },
     {
-        mainLink: 'Eyes',
-        makeUp: false,
-        innerLink: [
-            { link: 'Eyeliner' },
-            { link: 'Mascara' },
-            { link: 'Kajal' },
-            { link: 'Eye Shadow' },
-        ],
-    },
-    {
-        mainLink: 'Makeup Eraser',
+        mainLink: 'Buying Guide',
         makeUp: false,
 
     },

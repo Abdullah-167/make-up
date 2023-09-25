@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;800;900&display=swap');
 
 
 
@@ -231,19 +231,41 @@ body {
   }
 }
 
-.modal-open {
-  overflow: hidden;
+.mega-menu {
+  position: absolute;
+  left: -360px;
+}
+
+@media (max-width: 1155px) {
+  .mega-menu {
+    left: -270px;
+  }
+
+}
+@media (max-width: 1073px) {
+  .mega-menu {
+    left: -200px;
+  }
+
+}
+
+@media (max-width: 1048px) {
+  .mega-menu {
+    left: -200px;
+  }
+
+}
+@media (max-width: 1000px) {
+  .mega-menu {
+    left: -150px;
+  }
+
 }
 
 
-
-
-
-
-
-
-
-
+.modal-open {
+  overflow: hidden;
+}
 
 body {
   margin: 0;

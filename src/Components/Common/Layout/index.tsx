@@ -5,7 +5,7 @@ import NewNavbar from './NewNavbar';
 
 const Layout = ({ children }: any) => {
     return (
-        <section>
+        <section className=''>
             <Navbar />
             {/* <NewNavbar /> */}
             {children}
