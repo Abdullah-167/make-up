@@ -7,6 +7,8 @@ import OurToppic from './OurToppic'
 import Video from './Video'
 import LifeHack from './LifeHack'
 import Instagram from '@/Components/Common/Instagram'
+import NewsLetter from '@/Components/Common/NewsLetter'
+import Blog from './Blogs'
 
 const Home = () => {
     return (
@@ -15,9 +17,11 @@ const Home = () => {
             <SkinCare />
             <LatestBlog />
             <OurToppic />
-            <Video />
+            <Blog />
+            {/* <Video /> */}
             <LifeHack />
             <Instagram />
+            <NewsLetter />
         </Layout>
     )
 }

@@ -88,6 +88,8 @@ body {
   text-decoration: none;
   padding-bottom: 5px;
   cursor: pointer;
+
+
 }
 
 .blog-heading h2::before {
@@ -99,12 +101,17 @@ body {
   height: 1px;
   background-color: #D48D78;
   transition: .3s;
-  ;
+
 }
 
 .blog-heading:hover h2::before {
   width: 100%;
   background-color: #D48D78;
+}
+
+.blog-heading:hover h2 {
+  width: 100%;
+  color: #D48D78;
 }
 
 
@@ -242,6 +249,7 @@ body {
   }
 
 }
+
 @media (max-width: 1073px) {
   .mega-menu {
     left: -200px;
@@ -255,6 +263,7 @@ body {
   }
 
 }
+
 @media (max-width: 1000px) {
   .mega-menu {
     left: -150px;
@@ -355,4 +364,36 @@ body {
 
 .main-bg:hover .black-bg {
   display: block;
+}
+
+
+.newsletter-bg {
+  background-image: url('../../public/flowersbg.jpg');
+}
+
+
+
+
+.new:hover .btn-effect {
+  animation: translateAnimation2 .2s ease-in-out forwards;
+  display: block;
+
+}
+
+
+.new .btn-effect {
+  display: none;
+  rotate: 45deg;
+  transform: translateX(-300px);
+
+}
+
+@keyframes translateAnimation2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
 }

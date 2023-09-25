@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
                                         {link.innerLink && activeDropdown === index && (
                                             <ul
                                                 className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Makeup Tutorials'
-                                                    ? '-left-1.5 w-40 pl-4 py-3 dropdown--expanded'
+                                                    ? '-left-6 w-44 pl-4 py-3 dropdown--expanded'
                                                     : ''
                                                     }`}
                                             >
@@ -162,7 +162,7 @@ const Navbar: React.FC = () => {
                             >
                                 <span
                                     onMouseOver={() => setActiveDropdown(index)}
-                                    className={`text-[#000000] cursor-pointer z-[20] font-light text-lg flex items-center  transition-all duration-500 ${index === 0 ? 'pl-7' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                    className={`text-[#000000] cursor-pointer z-[20] font-light pb-2 text-lg flex items-center  transition-all duration-500 ${index === 0 ? 'pl-7' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                 >
                                     {link.mainLink}
                                     {(link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tips') && (
@@ -303,9 +303,10 @@ const links = [
     {
         mainLink: 'Makeup Tutorials',
         innerLink: [
-            { link: 'Lip Gloss', url: '/lips/lipgloss' },
-            { link: 'Lip liner', url: '/lips/lipliner' },
-            { link: 'Lipstick', url: '/lips/lipstick' },
+            { link: 'Eye Makeup Tutorials', url: '/lips/lipgloss' },
+            { link: 'Face Makeup Tutorials', url: '/lips/lipliner' },
+            { link: 'Lip Makeup Tutorials', url: '/lips/lipstick' },
+            { link: 'Makeup Trends', url: '/lips/lipstick' },
         ],
     },
     {
