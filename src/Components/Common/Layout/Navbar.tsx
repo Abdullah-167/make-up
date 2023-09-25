@@ -111,9 +111,9 @@ const Navbar: React.FC = () => {
                                         )}
                                         {link.makeUp && (
                                             <ul
-                                                className={`absolute z-[1000] text-sm shadow -left-24 w-[600px] pl-4 py-3  ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                                className={`absolute z-[1000] text-sm shadow -left-[130px] lg:-left-[300px] w-[850px] pl-4 py-3  ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
                                             >
-                                                <div className=' grid grid-cols-3'>
+                                                <div className=' grid grid-cols-6 gap-5 px-5'>
                                                     {link.innerMakeUp?.map((item, idx) => {
                                                         return (
                                                             <div className=''
@@ -239,6 +239,38 @@ const links = [
                     { link: 'Cream foundation', url: '/lips/lipstick' },
                     { link: 'Stick foundation', url: '/lips/lipstick' },
                     { link: 'Powder foundation', url: '/lips/lipstick' },
+                ]
+            },
+            {
+                heading: 'Skin Care',
+                lipsInner: [
+                    { link: 'Cleanser', url: '/lips/lipgloss' },
+                    { link: 'Moisturizer', url: '/lips/lipliner' },
+                    { link: 'Sunscreen', url: '/lips/lipstick' },
+                    { link: 'Serums', url: '/lips/lipstick' },
+                    { link: 'Toners', url: '/lips/lipstick' },
+                    { link: 'Masks', url: '/lips/lipstick' },
+                ]
+            },
+            {
+                heading: 'Nail Care ',
+                lipsInner: [
+                    { link: 'Nail Polish', url: '/lips/lipgloss' },
+                    { link: 'Base Coat', url: '/lips/lipliner' },
+                    { link: 'Top Coat', url: '/lips/lipstick' },
+                    { link: 'Nail File', url: '/lips/lipstick' },
+                    { link: 'Cuticle Oil', url: '/lips/lipstick' },
+                    { link: 'Nail Strengthener', url: '/lips/lipstick' },
+                ]
+            },
+            {
+                heading: 'Makeup Tools ',
+                lipsInner: [
+                    { link: 'Brushes', url: '/lips/lipgloss' },
+                    { link: 'Beauty Blender', url: '/lips/lipliner' },
+                    { link: 'Makeup  Mirrors', url: '/lips/lipstick' },
+                    { link: 'Eyelash Curler', url: '/lips/lipstick' },
+                    { link: 'Makeup Bag', url: '/lips/lipstick' },
                 ]
             },
         ]
