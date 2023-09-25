@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
     const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
     const [scrollDown, setScrollDown] = useState<boolean>(false);
     const [toggelTab, setToggelTab] = useState<boolean>(false);
+    const [isFoundationHovered, setIsFoundationHovered] = useState<boolean>(false);
 
     const handleMenu = () => {
         setToggelTab(!toggelTab);
@@ -67,17 +68,26 @@ const Navbar: React.FC = () => {
                                 <li
                                     key={index}
                                     className={` relative group ${scrollDown ? 'links-two' : 'links'}`}
-                                    onMouseLeave={() => setActiveDropdown(null)}
+                                    onMouseLeave={() => {
+                                        setActiveDropdown(null);
+                                        if (link.mainLink === 'Foundation') {
+                                            setIsFoundationHovered(false); // Step 1: Reset the state when leaving the "Foundation" link
+                                        }
+                                    }}
                                 >
                                     <span
-                                        onMouseOver={() => setActiveDropdown(index)}
+                                        onMouseOver={() => {
+                                            setActiveDropdown(index);
+                                            if (link.mainLink === 'Foundation') {
+                                                setIsFoundationHovered(true); // Step 1: Set the state when hovering over the "Foundation" link
+                                            }
+                                        }}
                                         className={`text-[#000000] font-light text-lg flex items-center  transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                     >
                                         {link.mainLink}
-                                        {(link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
+                                        {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes') && (
                                             <IoIosArrowUp
-                                                className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'
-                                                    }`}
+                                                className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
                                             />
                                         )}
                                     </span>
@@ -97,6 +107,31 @@ const Navbar: React.FC = () => {
                                                         </span>
                                                     </div>
                                                 ))}
+                                            </ul>
+                                        )}
+                                        {link.makeUp && (
+                                            <ul
+                                                className={`absolute z-[1000] text-sm shadow -left-24 w-[600px] pl-4 py-3  ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                            >
+                                                <div className=' grid grid-cols-3'>
+                                                    {link.innerMakeUp?.map((item, idx) => {
+                                                        return (
+                                                            <div className=''
+                                                                key={idx}>
+                                                                <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2>
+                                                                {item.lipsInner.map((newitem, newIdx) => {
+                                                                    return (
+                                                                        <div className={` mb-2`} key={newIdx}>
+                                                                            <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                                {newitem.link}
+                                                                            </span>
+                                                                        </div>
+                                                                    )
+                                                                })}
+                                                            </div>
+                                                        )
+                                                    })}
+                                                </div>
                                             </ul>
                                         )}
                                     </div>
@@ -169,10 +204,48 @@ export default Navbar;
 
 const links = [
     {
-        mainLink: 'Fondation',
+        mainLink: 'All MakeUp',
+        makeUp: true,
+        innerMakeUp: [
+            {
+                heading: 'Lips',
+                lipsInner: [
+                    { link: 'Lipstick', url: '/lips/lipstick' },
+                    { link: 'Lip Gloss', url: '/lips/lipgloss' },
+                    { link: 'Lip liner', url: '/lips/lipliner' },
+                    { link: 'Lip Balm', url: '/lips/lipliner' },
+                    { link: 'Lip Stain', url: '/lips/lipliner' },
+                    { link: 'Lip Mask', url: '/lips/lipliner' },
+                ]
+            },
+            {
+                heading: 'Eyes',
+                lipsInner: [
+                    { link: 'Eyeliner', url: '/lips/lipgloss' },
+                    { link: 'Mascara', url: '/lips/lipliner' },
+                    { link: 'Kajal', url: '/lips/lipstick' },
+                    { link: 'Eye Shadow', url: '/lips/lipstick' },
+                    { link: 'Eye Primer', url: '/lips/lipstick' },
+                    { link: 'Eyelash Extensions', url: '/lips/lipstick' },
+                    { link: 'Eye Glitter', url: '/lips/lipstick' },
+                    { link: 'Eye Concealer', url: '/lips/lipstick' },
+                ]
+            },
+            {
+                heading: 'Fundation',
+                lipsInner: [
+                    { link: 'Liquid foundation', url: '/lips/lipgloss' },
+                    { link: 'Serum foundation', url: '/lips/lipliner' },
+                    { link: 'Cream foundation', url: '/lips/lipstick' },
+                    { link: 'Stick foundation', url: '/lips/lipstick' },
+                    { link: 'Powder foundation', url: '/lips/lipstick' },
+                ]
+            },
+        ]
     },
     {
         mainLink: 'Lips',
+        makeUp: false,
         innerLink: [
             { link: 'Lip Gloss', url: '/lips/lipgloss' },
             { link: 'Lip liner', url: '/lips/lipliner' },
@@ -181,6 +254,7 @@ const links = [
     },
     {
         mainLink: 'Eyes',
+        makeUp: false,
         innerLink: [
             { link: 'Eyeliner' },
             { link: 'Mascara' },
@@ -190,14 +264,22 @@ const links = [
     },
     {
         mainLink: 'Makeup Eraser',
+        makeUp: false,
+
     },
     {
         mainLink: 'Blogs',
+        makeUp: false,
+
     },
     {
         mainLink: 'About',
+        makeUp: false,
+
     },
     {
         mainLink: 'Contact Us',
+        makeUp: false,
+
     },
 ];

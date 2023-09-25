@@ -7,7 +7,6 @@ import OurToppic from './OurToppic'
 import Video from './Video'
 import LifeHack from './LifeHack'
 import Instagram from '@/Components/Common/Instagram'
-import Carlsile from './Carlisle'
 
 const Home = () => {
     return (
@@ -19,7 +18,6 @@ const Home = () => {
             <Video />
             <LifeHack />
             <Instagram />
-            <Carlsile />
         </Layout>
     )
 }

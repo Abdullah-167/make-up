@@ -29,26 +29,26 @@ const Instagram = () => {
                             <span className="relative w-full text-left transition-colors duration-500 ease-in-out group-hover:text-tertiary">Pinterest</span>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4  pt-10 px-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-0 gap-5 pt-10 px-5">
                         {images.map((item, index) => {
                             return (
                                 <div
                                     key={index}
-                                    className="relative overflow-hidden cursor-pointer py-5 sm:py-0"
+                                    className="relative overflow-hidden cursor-pointer max-h-[300px] min-h-[300px]  sm:py-0"
                                     onMouseEnter={() => handleHover(index)}
                                     onMouseLeave={() => handleHover(null)}
                                 >
                                     <Image
                                         src={item.img}
                                         alt={item.alt}
-                                        className="w-full h-auto max-h-[300px] min-h-[300px] object-cover"
+                                        className="w-full h-auto max-h-[300px] min-h-[300px]  object-cover"
                                         width={500}
                                         height={500}
                                     />
-                                    <div className="absolute inset-0 flex justify-center items-center bg-black bg-opacity-30 hover:transition-all hover:duration-500 ease-in-out"></div>
+                                    <div className="max-h-[300px] min-h-[300px] absolute inset-0 flex justify-center items-center bg-black bg-opacity-30 hover:transition-all hover:duration-500 ease-in-out"></div>
                                     {hoveredIndex === index && (
-                                        <div className="absolute inset-0 flex justify-center items-center hover:bg-black hover:bg-opacity-60 hover:transition-all hover:duration-500 ease-in-out">
-                                            <div className="transition-all duration-500 text-tertiary opacity-60">
+                                        <div className="max-h-[300px] min-h-[300px] absolute inset-0 flex justify-center items-center hover:bg-black hover:bg-opacity-60 hover:transition-all hover:duration-500 ease-in-out">
+                                            <div className="transition-all  duration-500 text-tertiary opacity-60">
                                                 <BsPinterest size={50} />
                                             </div>
                                         </div>

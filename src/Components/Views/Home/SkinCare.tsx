@@ -12,7 +12,7 @@ const SkinCare = () => {
                         {data.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <p className='text-white px-4 py-1.5 max-w-[93px] mx-auto text-center rounded-xl font-semibold mb-4'
+                                    <p className='text-white px-4 py-1.5 max-w-[93px] whitespace-nowrap mx-auto text-center rounded-xl font-semibold mb-4'
                                         style={{
                                             backgroundColor: item.stepColor
                                         }}

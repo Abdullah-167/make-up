@@ -323,3 +323,14 @@ body {
 .thumbnail .keen-slider__slide.active {
   border: 2px dashed black;
 }
+
+
+.main-bg .black-bg {
+  display: none;
+  background: #000;
+  opacity: .4;
+}
+
+.main-bg:hover .black-bg {
+  display: block;
+}

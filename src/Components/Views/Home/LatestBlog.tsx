@@ -26,7 +26,7 @@ const LatestBlog = () => {
             },
         },
         slides: {
-            perView: 1,
+            perView: 1.5,
             spacing: 10,
         },
 
@@ -55,7 +55,7 @@ const LatestBlog = () => {
                                 <div className="relative slide-scale">
                                     <div className="absolute inset-0 bg-black bg-opacity-40 rounded-md z-[100]"></div>
                                     <Image
-                                        className="flex max-h-[468px] min-h-[468px] object-cover justify-center mx-auto rounded-md transform transition-transform hover:scale-75 z-[1000]"
+                                        className="flex sm:max-h-[468px]  max-h-[300px] min-h-[300px] sm:min-h-[468px] object-cover justify-center mx-auto rounded-md transform transition-transform hover:scale-75 z-[1000]"
                                         src={item.img}
                                         alt={"slider-images"}
                                         width={700}
