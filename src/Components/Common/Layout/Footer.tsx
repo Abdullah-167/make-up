@@ -13,18 +13,6 @@ import Container from './Container'
 
 
 const NewFooter = () => {
-    const colors = ["#F9F1E6", "#F6E6D3", "#F7E7DF", "#F5E5D8", "#F8E8E0"];
-    const [currentColorIndex, setCurrentColorIndex] = useState(0);
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
-        }, 5000);
-
-        return () => clearInterval(intervalId);
-    }, [colors.length]);
-
-    const currentColor = colors[currentColorIndex];
 
     return (
         <footer>
@@ -65,7 +53,7 @@ const NewFooter = () => {
                     </div>
                 </Container>
             </div>
-            <div className="bg-opacity-90" style={{ backgroundColor: currentColor }}>
+            <div className="bg-[#F9F1E6] bg-opacity-90">
                 <Container>
                     <div className="text-xs flex items-center flex-wrap sm:flex-nowrap justify-between  mx-auto py-3 px-5">
                         <p className="">@2023 AryzeTech </p>
