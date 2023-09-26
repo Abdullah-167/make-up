@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav>
-            <div className={`fixed top-0 py-5 w-full transition-all duration-500  ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
+            <div className={`fixed z-[1000] top-0 py-5 w-full transition-all duration-500  ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
                 <div className=' relative'>
                     <Container>
                         <div className='flex items-center justify-between z-[1000] '>
@@ -123,11 +123,13 @@ const Navbar: React.FC = () => {
                                                                     <Link href={item.url}> <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2> </Link>
                                                                     {item.lipsInner.map((newitem, newIdx) => {
                                                                         return (
-                                                                            <div className={` mb-2`} key={newIdx}>
-                                                                                <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                                    {newitem.link}
-                                                                                </span>
-                                                                            </div>
+                                                                            <Link href={newitem.url}>
+                                                                                <div className={` mb-2`} key={newIdx}>
+                                                                                    <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                                        {newitem.link}
+                                                                                    </span>
+                                                                                </div>
+                                                                            </Link>
                                                                         )
                                                                     })}
                                                                 </div>
@@ -152,7 +154,7 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                     </Container>
-                    <div className={` w-full z-[100] fixed top-[85px] py-5 h-full transition-all duration-700 shadow-md  right-0 max-w-[300px] ${toggelTab ? ' right-0 block z-[400]' : '  translate-x-[600px]  h-0'} ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
+                    <div className={` w-full z-[2000] fixed top-[85px] py-5 h-full transition-all duration-700 shadow-md  right-0 max-w-[300px] ${toggelTab ? ' right-0 block z-[400]' : '  translate-x-[600px]  h-0'} ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
                         {toggelTab && (
                             <ul className="flex flex-col space-x-7">
                                 {links.map((link, index) => (
@@ -212,9 +214,9 @@ const links = [
         url: '/lips',
         makeUp: false,
         innerLink: [
-            { link: 'Lip Gloss', url: '/lips/lipgloss' },
-            { link: 'Lip liner', url: '/lips/lipliner' },
-            { link: 'Lipstick', url: '/lips/lipstick' },
+            { link: 'Lip Gloss', url: '/lips/lipstick' },
+            { link: 'Lip liner', url: '/lips/lipgloss' },
+            { link: 'Lipstick', url: '/lips/lipliner' },
         ],
     },
     {
