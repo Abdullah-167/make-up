@@ -152,7 +152,7 @@ const Navbar: React.FC = () => {
                     </div>
                 </Container>
             </div >
-            <div className={` w-full absolute py-5 transition-all duration-700 shadow-md bg-white right-0 max-w-[300px] ${toggelTab ? ' top-[85px] block z-[400]' : ' -top-40  h-0'}`}>
+            <div className={` w-full fixed py-5 transition-all duration-700 shadow-md bg-white right-0 max-w-[300px] ${toggelTab ? ' top-[85px] block z-[400]' : ' -top-40  h-0'}`}>
                 {toggelTab && (
                     <ul className="flex flex-col space-x-7">
                         {links.map((link, index) => (

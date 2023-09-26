@@ -77,7 +77,9 @@ const Page = ({ pageData }: any) => {
                                             <Link href={'/'}>
                                                 <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D]'>{secCard.category}</span>
                                             </Link>
-                                            <h2 className='text-xl'>{secCard.heading}</h2>
+                                            <h1 className="text-xl inline-block group">
+                                                {secCard.heading}
+                                            </h1>
                                             <span className='text-sm pb-1 text-gray-500'>By {secCard.author} <span className='pl-2'> - </span> <span className='pl-2'> {formattedDate} </span></span>
                                         </div>
                                     ))}
@@ -107,7 +109,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: any) {
 
-    const pageData = blogData.find((page: any) => page.url ===( params.page));
+    const pageData = blogData.find((page: any) => page.url === (params.page));
 
     return {
         props: { pageData },

@@ -380,14 +380,30 @@ body {
     max-width: 1100px;
   }
 }
+
 @media (max-width: 850px) {
   .sec-main-cards {
-    grid-template-columns: auto  auto;
+    grid-template-columns: auto auto;
     max-width: 700px;
   }
 }
+
 @media (max-width: 640px) {
   .sec-main-cards {
-    grid-template-columns: auto  ;
+    grid-template-columns: auto;
   }
+}
+
+
+.heading-text {
+  background-image: linear-gradient(to right, transparent 50%, #000 50%);
+  background-size: 200% 10px;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  transition: background-position 0.3s ease;
+  display: inline;
+}
+
+.heading-text:hover {
+  background-position: 0%;
 }
