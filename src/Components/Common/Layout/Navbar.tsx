@@ -152,7 +152,7 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                     </Container>
-                    <div className={` w-full z-[100] fixed py-5 transition-all duration-700 shadow-md bg-white right-0 max-w-[300px] ${toggelTab ? ' top-[85px] block z-[400]' : ' -top-40  h-0'}`}>
+                    <div className={` w-full z-[100] fixed top-[85px] py-5 h-full transition-all duration-700 shadow-md  right-0 max-w-[300px] ${toggelTab ? ' right-0 block z-[400]' : ' -right-[600px]  h-0'} ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
                         {toggelTab && (
                             <ul className="flex flex-col space-x-7">
                                 {links.map((link, index) => (
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
                                     >
                                         <span
                                             onMouseOver={() => setActiveDropdown(index)}
-                                            className={`text-[#000000] cursor-pointer z-[20] font-light pb-2 text-lg flex items-center  transition-all duration-500 ${index === 0 ? 'pl-7' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                            className={`text-[#000000] cursor-pointer z-[20] font-light pb-6 text-lg flex items-center  transition-all duration-500 ${index === 0 ? 'pl-7' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                         >
                                             {link.mainLink}
                                             {(link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tips') && (
