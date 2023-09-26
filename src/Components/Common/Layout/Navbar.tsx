@@ -57,13 +57,15 @@ const Navbar: React.FC = () => {
                     <Container>
                         <div className='flex items-center justify-between z-[1000] '>
                             <div className=''>
-                                <Image
-                                    src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
-                                    alt={'logo'}
-                                    width={120}
-                                    height={120}
-                                    className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
-                                />
+                                <Link href={'/'}>
+                                    <Image
+                                        src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
+                                        alt={'logo'}
+                                        width={120}
+                                        height={120}
+                                        className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
+                                    />
+                                </Link>
                             </div>
                             <ul className="flex gap-4 nav-links">
                                 {links.map((link, index) => (
