@@ -4,6 +4,7 @@ import Container from './Container';
 import { IoIosArrowUp } from 'react-icons/io';
 import { CgMenuLeft } from 'react-icons/cg';
 import { RxCross1 } from 'react-icons/rx';
+import Link from 'next/link';
 
 interface LinkItem {
     link: string;
@@ -111,14 +112,14 @@ const Navbar: React.FC = () => {
                                         )}
                                         {link.makeUp && (
                                             <ul
-                                                className={`mega-menu pt-7 z-[1000] text-sm shadow w-[870px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                                className={`mega-menu pt-7 z-[2000] text-sm shadow w-[870px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
                                             >
                                                 <div className=' flex justify-evenly'>
                                                     {link.innerMakeUp?.map((item, idx) => {
                                                         return (
                                                             <div className=''
                                                                 key={idx}>
-                                                                <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2>
+                                                                <Link href={item.url}> <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2> </Link>
                                                                 {item.lipsInner.map((newitem, newIdx) => {
                                                                     return (
                                                                         <div className={` mb-2`} key={newIdx}>
@@ -206,6 +207,7 @@ const links = [
 
     {
         mainLink: 'Lips',
+        url: '/lips',
         makeUp: false,
         innerLink: [
             { link: 'Lip Gloss', url: '/lips/lipgloss' },
@@ -215,6 +217,7 @@ const links = [
     },
     {
         mainLink: 'Eyes',
+        url: '/eyes',
         makeUp: false,
         innerLink: [
             { link: 'Eyeliner' },
@@ -225,10 +228,12 @@ const links = [
     },
     {
         mainLink: 'All MakeUp',
+        url: '/',
         makeUp: true,
         innerMakeUp: [
             {
                 heading: 'Lips',
+                url: '/lips',
                 lipsInner: [
                     { link: 'Lipstick', url: '/lips/lipstick' },
                     { link: 'Lip Gloss', url: '/lips/lipgloss' },
@@ -240,6 +245,7 @@ const links = [
             },
             {
                 heading: 'Eyes',
+                url: '/eyes',
                 lipsInner: [
                     { link: 'Eyeliner', url: '/lips/lipgloss' },
                     { link: 'Mascara', url: '/lips/lipliner' },
@@ -252,7 +258,8 @@ const links = [
                 ]
             },
             {
-                heading: 'Fundation',
+                heading: 'Foundation',
+                url: '/foundation',
                 lipsInner: [
                     { link: 'Liquid foundation', url: '/lips/lipgloss' },
                     { link: 'Serum foundation', url: '/lips/lipliner' },
@@ -263,6 +270,7 @@ const links = [
             },
             {
                 heading: 'Skin Care',
+                url: '/skincare',
                 lipsInner: [
                     { link: 'Cleanser', url: '/lips/lipgloss' },
                     { link: 'Moisturizer', url: '/lips/lipliner' },
@@ -274,6 +282,7 @@ const links = [
             },
             {
                 heading: 'Nail Care ',
+                url: '/nailcare',
                 lipsInner: [
                     { link: 'Nail Polish', url: '/lips/lipgloss' },
                     { link: 'Base Coat', url: '/lips/lipliner' },
@@ -285,6 +294,7 @@ const links = [
             },
             {
                 heading: 'Makeup Tools ',
+                url: '/makeuptools',
                 lipsInner: [
                     { link: 'Brushes', url: '/lips/lipgloss' },
                     { link: 'Beauty Blender', url: '/lips/lipliner' },
@@ -297,11 +307,13 @@ const links = [
     },
     {
         mainLink: 'Makeup Eraser',
+        url: '/',
         makeUp: false,
 
     },
     {
         mainLink: 'Makeup Tutorials',
+        url: '/',
         innerLink: [
             { link: 'Eye Makeup Tutorials', url: '/lips/lipgloss' },
             { link: 'Face Makeup Tutorials', url: '/lips/lipliner' },
@@ -311,21 +323,25 @@ const links = [
     },
     {
         mainLink: 'Buying Guide',
+        url: '/',
         makeUp: false,
 
     },
     {
         mainLink: 'Blogs',
+        url: '/',
         makeUp: false,
 
     },
     {
         mainLink: 'About',
+        url: '/',
         makeUp: false,
 
     },
     {
         mainLink: 'Contact Us',
+        url: '/',
         makeUp: false,
 
     },

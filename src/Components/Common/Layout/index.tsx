@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar';
 import Footer from './Footer';
 import NewNavbar from './NewNavbar';
+import NewsLetter from '../NewsLetter';
 
 const Layout = ({ children }: any) => {
     return (
@@ -9,6 +10,7 @@ const Layout = ({ children }: any) => {
             <Navbar />
             {/* <NewNavbar /> */}
             {children}
+            <NewsLetter />
             <Footer />
         </section>
     )

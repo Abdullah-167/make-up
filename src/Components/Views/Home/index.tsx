@@ -21,7 +21,6 @@ const Home = () => {
             {/* <Video /> */}
             <LifeHack />
             <Instagram />
-            <NewsLetter />
         </Layout>
     )
 }
