@@ -18,7 +18,7 @@ const OurToppic = () => {
                     <div>
                         <h2 className=' text-3xl sm:text-5xl text-black pb-10'>Our Latest Topics</h2>
                         <div className='grid md:grid-cols-2 gap-10 items-center'>
-                            <div className='md:pt-52'>
+                            <div className=''>
                                 {data.map((item, index) => (
                                     <div
                                         key={index}

@@ -34,7 +34,7 @@ const Blog = () => {
                 </div>
                 <p className='text-3xl sm:text-5xl font-semibold text-center pb-5 sm:pb-10'>{`Editor's Choice`}</p>
                 <div className=" pb-10 px-5">
-                    <div className="flex gap-4  justify-center max-w-[500px] px-5 md:max-w-[800px] mx-auto lg:max-w-full overflow-x-scroll  pb-7 ">
+                    <div className="flex gap-4  justify-center max-w-[500px] px-5 md:max-w-[800px] mx-auto lg:max-w-full overflow-x-scroll md:overflow-auto  pb-7 ">
                         {DataA.map((item, index) => {
                             return (
                                 <div
