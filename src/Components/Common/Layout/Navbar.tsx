@@ -125,8 +125,8 @@ const Navbar: React.FC = () => {
                                                                     <Link href={item.url}> <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2> </Link>
                                                                     {item.lipsInner.map((newitem, newIdx) => {
                                                                         return (
-                                                                            <Link href={newitem.url}>
-                                                                                <div className={` mb-2`} key={newIdx}>
+                                                                            <Link href={newitem.url}  key={newIdx}>
+                                                                                <div className={` mb-2`}>
                                                                                     <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
                                                                                         {newitem.link}
                                                                                     </span>
