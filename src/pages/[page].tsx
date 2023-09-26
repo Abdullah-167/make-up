@@ -1,7 +1,7 @@
 // pages/[page].js
 import React from 'react';
 import Layout from '../Components/Common/Layout/index';
-import { blogData } from './lib/data';
+import { blogData } from '../lib/data';
 import Link from 'next/link';
 import Image from 'next/image';
 
