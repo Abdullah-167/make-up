@@ -1,7 +1,7 @@
 // pages/[page].js
 import React from 'react';
 import Layout from '../Components/Common/Layout/index';
-import { blogData } from './data';
+import { blogData } from './lib/data';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -11,7 +11,6 @@ const Page = ({ pageData }: any) => {
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
-
 
     return (
         <main>
