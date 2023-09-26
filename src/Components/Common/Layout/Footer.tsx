@@ -22,7 +22,7 @@ const NewFooter = () => {
         }, 5000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [colors.length]);
 
     const currentColor = colors[currentColorIndex];
 
@@ -65,7 +65,7 @@ const NewFooter = () => {
                     </div>
                 </Container>
             </div>
-            <div className="bg-[#F9F1E6] bg-opacity-90" style={{ backgroundColor: currentColor }}>
+            <div className="bg-opacity-90" style={{ backgroundColor: currentColor }}>
                 <Container>
                     <div className="text-xs flex items-center flex-wrap sm:flex-nowrap justify-between  mx-auto py-3 px-5">
                         <p className="">@2023 AryzeTech </p>
