@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
                                                     setIsFoundationHovered(true); // Step 1: Set the state when hovering over the "Foundation" link
                                                 }
                                             }}
-                                            className={`text-[#000000] font-extralight text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                            className={`text-[#000000] text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                         >
                                             {link.mainLink}
                                             {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (

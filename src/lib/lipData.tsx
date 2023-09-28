@@ -1,8 +1,8 @@
 export const lipcatData = [
     {
         url: 'lipstick',
-        mainHeading: 'Featured Lips Blogs',
-        catHeading: 'Top Choosen Categories For Lips',
+        mainHeading: 'Latest Lipstick Articles',
+        catHeading: 'Enjoy Our Top Notch Articles',
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -46,7 +46,7 @@ export const lipcatData = [
                 img: '/aunt.jpg',
                 category: 'Fondation',
                 author: 'Padhana',
-                heading: 'Cosmetic procedures for aging skin'
+                heading: 'Top new my articles of skin skin '
             },
             {
                 img: '/style.jpg',
@@ -58,7 +58,7 @@ export const lipcatData = [
                 img: '/imgfour.png',
                 category: 'Fondation',
                 author: 'Padhana',
-                heading: 'Cosmetic procedures for aging skin'
+                heading: 'My New Skin Related Articles'
             },
             {
                 img: '/womenmakeup.webp',
@@ -70,7 +70,7 @@ export const lipcatData = [
                 img: '/phithree.webp',
                 category: 'Fondation',
                 author: 'Padhana',
-                heading: 'Cosmetic procedures for aging skin'
+                heading: 'Who Are You And Why Are you'
             },
         ]
     },
@@ -377,7 +377,7 @@ export const lipcatData = [
     {
         url: 'lipmask',
         mainHeading: 'Featured Makeup Tools Blogs',
-        catHeading: 'Top Choosen Categories For Makeup Tools',
+        catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {
                 img: '/imgfour.png',
