@@ -300,7 +300,7 @@ export const lipcatData = [
         ]
     },
     {
-        url: '/lips/lipstain',
+        url: 'lipstain',
         mainHeading: 'Featured Nail Care Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
         mainCards: [

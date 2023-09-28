@@ -122,18 +122,20 @@ const Navbar: React.FC = () => {
                                                             return (
                                                                 <div className=''
                                                                     key={idx}>
-                                                                    <Link href={item.url}> <h2 className=' font-semibold text-[17px] pb-3'>{item.heading}</h2> </Link>
-                                                                    {item.lipsInner.map((newitem, newIdx) => {
-                                                                        return (
-                                                                            <Link href={newitem.url}  key={newIdx}>
-                                                                                <div className={` mb-2`}>
-                                                                                    <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                                        {newitem.link}
-                                                                                    </span>
-                                                                                </div>
-                                                                            </Link>
-                                                                        )
-                                                                    })}
+                                                                    <Link href={item.url}> <span className=' font-semibold text-[17px]'>{item.heading}</span> </Link>
+                                                                    <div className='pt-3'>
+                                                                        {item.lipsInner.map((newitem, newIdx) => {
+                                                                            return (
+                                                                                <Link href={newitem.url} key={newIdx}>
+                                                                                    <div className={` mb-2`}>
+                                                                                        <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                                            {newitem.link}
+                                                                                        </span>
+                                                                                    </div>
+                                                                                </Link>
+                                                                            )
+                                                                        })}
+                                                                    </div>
                                                                 </div>
                                                             )
                                                         })}
@@ -244,9 +246,9 @@ const links = [
                     { link: 'Lipstick', url: '/lips/lipstick' },
                     { link: 'Lip Gloss', url: '/lips/lipgloss' },
                     { link: 'Lip liner', url: '/lips/lipliner' },
-                    { link: 'Lip Balm', url: '/lips/lipliner' },
-                    { link: 'Lip Stain', url: '/lips/lipliner' },
-                    { link: 'Lip Mask', url: '/lips/lipliner' },
+                    { link: 'Lip Balm', url: '/lips/lipbalm' },
+                    { link: 'Lip Stain', url: '/lips/lipstain' },
+                    { link: 'Lip Mask', url: '/lips/lipmask' },
                 ]
             },
             {
