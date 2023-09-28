@@ -123,19 +123,18 @@ const Navbar: React.FC = () => {
                                                                 <div className=''
                                                                     key={idx}>
                                                                     <Link href={item.url}> <span className=' font-semibold text-[17px]'>{item.heading}</span> </Link>
-                                                                    <div className='pt-3'>
-                                                                        {item.lipsInner.map((newitem, newIdx) => {
-                                                                            return (
-                                                                                <Link href={newitem.url} key={newIdx}>
-                                                                                    <div className={` mb-2`}>
-                                                                                        <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                                            {newitem.link}
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </Link>
-                                                                            )
-                                                                        })}
-                                                                    </div>
+                                                                    <div className='pt-3'></div>
+                                                                    {item.lipsInner.map((newitem, newIdx) => {
+                                                                        return (
+                                                                            <Link href={newitem.url} key={newIdx}>
+                                                                                <div className={` mb-2`}>
+                                                                                    <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                                        {newitem.link}
+                                                                                    </span>
+                                                                                </div>
+                                                                            </Link>
+                                                                        )
+                                                                    })}
                                                                 </div>
                                                             )
                                                         })}
@@ -255,60 +254,61 @@ const links = [
                 heading: 'Eyes',
                 url: '/eyes',
                 lipsInner: [
-                    { link: 'Eyeliner', url: '/lips/lipgloss' },
-                    { link: 'Mascara', url: '/lips/lipliner' },
-                    { link: 'Kajal', url: '/lips/lipstick' },
-                    { link: 'Eye Shadow', url: '/lips/lipstick' },
-                    { link: 'Eye Primer', url: '/lips/lipstick' },
-                    { link: 'Eyelash Extensions', url: '/lips/lipstick' },
-                    { link: 'Eye Glitter', url: '/lips/lipstick' },
-                    { link: 'Eye Concealer', url: '/lips/lipstick' },
+                    { link: 'Eyeliner', url: '/eyes/eyeliner' },
+                    { link: 'Mascara', url: '/eyes/mascara' },
+                    { link: 'Kajal', url: '/eyes/kajal' },
+                    { link: 'Eye Shadow', url: '/eyes/eye-Shadow' },
+                    { link: 'Eye Primer', url: '/eyes/eye-primers' },
+                    { link: 'Eyelash Extensions', url: '/eyes/eyelash-extensions' },
+                    { link: 'Eye Glitter', url: '/eyes/eye-glitter' },
+                    { link: 'Eye Concealer', url: '/eyes/eye-concealer' },
                 ]
             },
             {
                 heading: 'Foundation',
                 url: '/foundation',
                 lipsInner: [
-                    { link: 'Liquid foundation', url: '/lips/lipgloss' },
-                    { link: 'Serum foundation', url: '/lips/lipliner' },
-                    { link: 'Cream foundation', url: '/lips/lipstick' },
-                    { link: 'Stick foundation', url: '/lips/lipstick' },
-                    { link: 'Powder foundation', url: '/lips/lipstick' },
+                    { link: 'Liquid Foundation', url: '/foundation/liquid-foundation' },
+                    { link: 'Serum Foundation', url: '/foundation/serum-foundation' },
+                    { link: 'Cream Foundation', url: '/foundation/cream-foundation' },
+                    { link: 'Stick Foundation', url: '/foundation/cream-foundation' },
+                    { link: 'Powder Foundation', url: '/foundation/powder-foundation' },
                 ]
             },
             {
                 heading: 'Skin Care',
                 url: '/skincare',
                 lipsInner: [
-                    { link: 'Cleanser', url: '/lips/lipgloss' },
-                    { link: 'Moisturizer', url: '/lips/lipliner' },
-                    { link: 'Sunscreen', url: '/lips/lipstick' },
-                    { link: 'Serums', url: '/lips/lipstick' },
-                    { link: 'Toners', url: '/lips/lipstick' },
-                    { link: 'Masks', url: '/lips/lipstick' },
+                    { link: 'Cleanser', url: '/skincare/cleanser' },
+                    { link: 'Moisturizer', url: '/skincare/moisturizer' },
+                    { link: 'Sunscreen', url: '/skincare/sunscreen' },
+                    { link: 'Serums', url: '/skincare/serums' },
+                    { link: 'Toners', url: '/skincare/toners' },
+                    { link: 'Masks', url: '/skincare/Masks' },
                 ]
             },
             {
                 heading: 'Nail Care ',
                 url: '/nailcare',
                 lipsInner: [
-                    { link: 'Nail Polish', url: '/lips/lipgloss' },
-                    { link: 'Base Coat', url: '/lips/lipliner' },
-                    { link: 'Top Coat', url: '/lips/lipstick' },
-                    { link: 'Nail File', url: '/lips/lipstick' },
-                    { link: 'Cuticle Oil', url: '/lips/lipstick' },
-                    { link: 'Nail Strengthener', url: '/lips/lipstick' },
+                    { link: 'Nail Polish', url: '/nailcare/nail-polish' },
+                    { link: 'Base Coat', url: '/nailcare/base-coat' },
+                    { link: 'Top Coat', url: '/nailcare/top-coat' },
+                    { link: 'Nail File', url: '/nailcare/nail-file' },
+                    { link: 'Cuticle Oil', url: '/nailcare/cuticle-Oil' },
+                    { link: 'Nail Strengthener', url: '/nailcare/nail-strengthener' },
+                    { link: 'Nail Hygiene', url: '/nailcare/nail-hygiene' },
                 ]
             },
             {
                 heading: 'Makeup Tools ',
                 url: '/makeuptools',
                 lipsInner: [
-                    { link: 'Brushes', url: '/lips/lipgloss' },
-                    { link: 'Beauty Blender', url: '/lips/lipliner' },
-                    { link: 'Makeup  Mirrors', url: '/lips/lipstick' },
-                    { link: 'Eyelash Curler', url: '/lips/lipstick' },
-                    { link: 'Makeup Bag', url: '/lips/lipstick' },
+                    { link: 'Brushes', url: '/makeuptools/brushes' },
+                    { link: 'Beauty Blender', url: '/makeuptools/beauty-blender' },
+                    { link: 'Makeup  Mirrors', url: '/makeuptools/makeup-mirrors' },
+                    { link: 'Eyelash Curler', url: '/makeuptools/eyelash-curler' },
+                    { link: 'Makeup Bag', url: '/makeuptools/makeup-bag' },
                 ]
             },
         ]

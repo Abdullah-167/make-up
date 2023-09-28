@@ -1,14 +1,14 @@
 // pages/categories/[category].js
 
 import { useRouter } from 'next/router';
-import { lipcatData } from '../../lib/lipData';
+import { eyesCatData } from '../../lib/eyescat';
 import Layout from '@/Components/Common/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 
-const CategoryPage = ({ pageData }: any) => {
+const EyesCatPage = ({ pageData }: any) => {
 
     const [searchQuery, setSearchQuery] = useState("");
     const [isInputVisible, setInputVisible] = useState(true);
@@ -141,7 +141,7 @@ const CategoryPage = ({ pageData }: any) => {
 
 
 export async function getStaticPaths() {
-    const paths = lipcatData.map((page) => ({
+    const paths = eyesCatData.map((page) => ({
         params: { category: page.url },
     }));
 
@@ -152,11 +152,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-    const pageData = lipcatData.find((page) => page.url === params.category);
+    const pageData = eyesCatData.find((page) => page.url === params.category);
 
     return {
         props: { pageData },
     };
 }
 
-export default CategoryPage;
+export default EyesCatPage;
