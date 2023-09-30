@@ -6,6 +6,7 @@ import Layout from '@/Components/Common/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import FaqSection from '@/Components/Common/Faq';
 
 
 const EyesCatPage = ({ pageData }: any) => {
@@ -48,7 +49,6 @@ const EyesCatPage = ({ pageData }: any) => {
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
-
 
     return (
         <main>
@@ -132,6 +132,34 @@ const EyesCatPage = ({ pageData }: any) => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="flex justify-center pb-10">
+                        <a href="#" className="flex items-center justify-center px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md cursor-not-allowed rtl:-scale-x-100 dark:bg-[#F9F2E8] ">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+
+                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
+                            1
+                        </a>
+
+                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
+                            2
+                        </a>
+
+                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
+                            ...
+                        </a>
+
+                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
+                            6
+                        </a>
+                        <a href="#" className="flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md rtl:-scale-x-100 dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
                     </div>
                 </section>
             </Layout>

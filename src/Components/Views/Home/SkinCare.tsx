@@ -7,7 +7,7 @@ const SkinCare = () => {
         <section>
             <Container>
                 <div className='pb-12 pt-20 sm:pt-28 sm:pb-20'>
-                    <h2 className='text-3xl sm:text-5xl text-center font-semibold pb-8 sm:pb-14'>Skincare routine in 4 steps</h2>
+                    <h2 className='text-3xl sm:text-5xl text-center font-semibold pb-8 sm:pb-14'> <span className='text-tertiary'> Skincare </span> routine in 4 steps</h2>
                     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-9 '>
                         {data.map((item, index) => {
                             return (

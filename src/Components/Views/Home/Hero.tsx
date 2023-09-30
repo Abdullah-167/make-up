@@ -25,7 +25,7 @@ const Hero = () => {
                             />
                         </div>
                         <div className='md:flex hidden'>
-                            <Image loading='lazy' src={'/heroimg.svg'} className='pointer-events-none' alt='her0-img' width={500} height={500} />
+                            <Image loading='lazy' src={'/hero.png'} className='pointer-events-none' alt='her0-img' width={500} height={500} />
                         </div>
                     </div>
                 </Container>

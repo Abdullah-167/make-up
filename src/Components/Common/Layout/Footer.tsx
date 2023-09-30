@@ -148,7 +148,7 @@ const data = [
         mainHeading: 'Menu 3',
         innerSec: [
             {
-                text: 'Fundation'
+                text: 'Foundation'
             },
             {
                 text: 'Liquid foundation '

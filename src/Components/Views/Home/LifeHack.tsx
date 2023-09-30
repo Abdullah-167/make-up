@@ -15,7 +15,7 @@ const LifeHack = () => {
                 <div className='py-6 md:py-12 lg:py-20'>
                     <div className='flex  justify-between items-center pb-4 md:pb-8 lg:pb-12'>
                         <h2 className=' font-medium sm:font-semibold text-xl md:text-3xl lg:text-4xl mb-2 md:mb-0 md:mr-4'>
-                            Essential Makeup Life Hacks
+                            Essential <span className='text-tertiary'> Makeup </span> Life Hacks
                         </h2>
                         <span className='bg-[#EBEEF6] hover:bg-[#b6c0d8] transition-all duration-500 px-2 md:px-3 py-1 text-xs md:text-sm font-thin cursor-pointer'>
                             See All

@@ -83,15 +83,15 @@ const Blog = () => {
                                                             query: { post: JSON.stringify(newitem) },
                                                         }}
                                                     >
-                                                        <div key={idx}>
-                                                            <div className="relative overflow-hidden lg:max-w-[500px] ">
-                                                                <Image className='transition-transform pb-3 hover:scale-105 duration-500 w-full' src={newitem.mainImg} alt={'food'} width={500} height={500} />
+                                                        <div className="border-[1.5px] border-tertiary bg-transparent hover:bg-tertiary transition-all duration-300 px-2 py-3 rounded-md hover:scale-105" key={idx}>
+                                                            <div className="relative overflow-hidden lg:max-w-[500px]  rounded-md">
+                                                                <Image className='transition-transform pb-3 hover:scale-105 duration-500 w-full rounded-md' src={newitem.mainImg} alt={'food'} width={500} height={500} />
                                                             </div>
-                                                            <div className='flex gap-1 text-gray-400 items-center pb-2'>
+                                                            <div className='flex gap-1  text-xs items-center pb-2'>
                                                                 <AiOutlineClockCircle />
-                                                                <span className='text-base'>30 Minutes</span>
+                                                                <span className=''>30 Minutes</span>
                                                             </div>
-                                                            <p className='text-2xl font-secondary pb-4'>{newitem.heading}</p>
+                                                            <p className='text-2xl font-medium pb-4'>{newitem.heading}</p>
                                                             <p className='text-gray-500 pb-6'>{newitem.description}</p>
                                                             <div className='flex justify-between items-center'>
                                                                 <div className='flex items-center gap-4'>
