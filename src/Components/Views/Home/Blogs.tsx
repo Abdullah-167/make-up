@@ -79,7 +79,7 @@ const Blog = () => {
                                                     <Link
                                                         key={idx}
                                                         href={{
-                                                            pathname:`/blog/${slug}`,
+                                                            pathname:`/blogs/${slug}`,
                                                             query: { post: JSON.stringify(newitem) },
                                                         }}
                                                     >

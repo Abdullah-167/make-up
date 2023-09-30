@@ -13,7 +13,7 @@ const BlogPost = () => {
 
     return (
         <div>
-            <BlogDetail post={post} /> {/* Pass the post data as a prop to BlogDetail */}
+            <BlogDetail post={post} />
         </div>
     );
 };

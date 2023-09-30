@@ -38,7 +38,7 @@ const EyesCatPage = ({ pageData }: any) => {
         <main>
             <Layout>
                 <section className=' '>
-                    <form className="pt-32 pb-14">
+                    <form className="pt-32 pb-10 sm:pb-14">
                         <div className='flex items-center max-w-[500px] mx-auto px-5'>
                             <label className="sr-only">Search</label>
                             <div className="relative w-full">
@@ -67,11 +67,11 @@ const EyesCatPage = ({ pageData }: any) => {
                             <div key={pageData.url}>
                                 {!searchQuery && (
                                     <div>
-                                        <p className='text-3xl sm:text-5xl font-semibold sm:text-center pb-7'>{pageData.mainHeading}</p>
-                                        <div className='hidden md:flex gap-2 items-center justify-center pb-9'>
-                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 sm:block hidden'></p>
-                                            <h2 className='text-gray-500'>{pageData.catHeading} </h2>
-                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 sm:block hidden'></p>
+                                        <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
+                                        <div className='flex gap-2 items-center justify-center pb-9'>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
+                                            <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
                                         </div>
                                     </div>
                                 )}

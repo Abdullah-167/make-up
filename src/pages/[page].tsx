@@ -24,7 +24,7 @@ const Page = ({ pageData }: any) => {
         <main>
             <Layout>
                 <section>
-                    <form className="pt-32 pb-14">
+                    <form className="pt-32 pb-10 sm:pb-14">
                         <div className='flex items-center max-w-[500px] mx-auto px-5'>
                             <label className="sr-only">Search</label>
                             <div className="relative w-full">
