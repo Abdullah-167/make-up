@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 const FaqSection = ({ faqData }: any) => {
+    
     const [isOpen, setIsOpen] = useState(null);
 
     const toggleFaq = (index: any) => {

@@ -5,11 +5,25 @@ import { BiLike } from "react-icons/bi";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineShare } from "react-icons/hi";
 import { CiBookmark } from "react-icons/ci";
-
-
+import {
+    FacebookShareButton,
+    TwitterShareButton,
+    PinterestShareButton,
+    InstapaperShareButton
+} from 'react-share';
+import { BsFacebook, BsInstagram, BsPinterest, BsTwitter } from 'react-icons/bs';
 
 const Blog = () => {
     const [activeTab, setActiveTab] = useState(DataA[0].id);
+    const [activeIconsIdx, setActiveIconsIdx] = useState(null);
+
+    const toggleIcons = (idx: any) => {
+        if (activeIconsIdx === idx) {
+            setActiveIconsIdx(null);
+        } else {
+            setActiveIconsIdx(idx);
+        }
+    };
 
     const handleClick = (itemId: any) => {
         setActiveTab(itemId);
@@ -23,6 +37,7 @@ const Blog = () => {
             .replace(/ /g, '-')
             ;
     }
+
 
     return (
         <div className="py-12">
@@ -58,7 +73,7 @@ const Blog = () => {
                                     >
                                         {item.btnHeading}
                                     </span>
-                               
+
                                 </div>
                             );
                         })}
@@ -72,50 +87,82 @@ const Blog = () => {
                                     key={index}
                                 >
                                     {activeTab === item.id && (
-                                        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8`}>
+                                        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 `}>
                                             {item.data.map((newitem, idx) => {
                                                 const slug = generateSlug(newitem.heading);
                                                 return (
-                                                    <Link
-                                                        key={idx}
-                                                        href={{
-                                                            pathname:`/blogs/${slug}`,
-                                                            query: { post: JSON.stringify(newitem) },
-                                                        }}
-                                                    >
-                                                        <div className="border-[1.5px] border-tertiary bg-transparent hover:bg-tertiary transition-all duration-300 px-2 py-3 rounded-md hover:scale-105" key={idx}>
-                                                            <div className="relative overflow-hidden lg:max-w-[500px]  rounded-md">
-                                                                <Image className='transition-transform pb-3 hover:scale-105 duration-500 w-full rounded-md' src={newitem.mainImg} alt={'food'} width={500} height={500} />
-                                                            </div>
-                                                            <div className='flex gap-1  text-xs items-center pb-2'>
-                                                                <AiOutlineClockCircle />
-                                                                <span className=''>30 Minutes</span>
-                                                            </div>
+
+                                                    <div className="border-[1.5px] border-tertiary bg-transparent hover:bg-tertiary transition-all duration-300 px-2 py-3 rounded-md hover:scale-105 relative" key={idx}>
+                                                        <div className="relative overflow-hidden lg:max-w-[500px]  rounded-md">
+                                                            <Image className='transition-transform pb-3 hover:scale-105 duration-500 w-full rounded-md' src={newitem.mainImg} alt={'food'} width={500} height={500} />
+                                                        </div>
+                                                        <div className='flex gap-1  text-xs items-center pb-2'>
+                                                            <AiOutlineClockCircle />
+                                                            <span className=''>30 Minutes</span>
+                                                        </div>
+                                                        <Link
+                                                            key={idx}
+                                                            href={{
+                                                                pathname: `/blogs/${slug}`,
+                                                                query: { post: JSON.stringify(newitem) },
+                                                            }}
+                                                        >
                                                             <p className='text-2xl font-medium pb-4'>{newitem.heading}</p>
+                                                        </Link>
+                                                        <Link
+                                                            key={idx}
+                                                            href={{
+                                                                pathname: `/blogs/${slug}`,
+                                                                query: { post: JSON.stringify(newitem) },
+                                                            }}
+                                                        >
                                                             <p className='text-gray-500 pb-6'>{newitem.description}</p>
-                                                            <div className='flex justify-between items-center'>
-                                                                <div className='flex items-center gap-4'>
-                                                                    <Image src={newitem.publisherImg} alt='icon' width={50} height={50} />
-                                                                    <div className='text-sm'>
-                                                                        {newitem.publisherName}
-                                                                        <p className='text-xs opacity-40 pt-0.5'>May 20, 2020</p>
-                                                                    </div>
+                                                        </Link>
+                                                        <div className='flex justify-between items-center'>
+                                                            <div className='flex items-center gap-4'>
+                                                                <Image src={newitem.publisherImg} alt='icon' width={50} height={50} />
+                                                                <div className='text-sm'>
+                                                                    {newitem.publisherName}
+                                                                    <p className='text-xs opacity-40 pt-0.5'>May 20, 2020</p>
                                                                 </div>
-                                                                <div className='flex gap-3'>
-                                                                    <div className='bg-gray-100 flex justify-center items-center rounded-full w-10 h-10'>
-                                                                        <span className='text-xl opacity-50'>
-                                                                            <HiOutlineShare />
-                                                                        </span>
-                                                                    </div>
-                                                                    <div className='bg-gray-100 flex justify-center items-center rounded-full w-10 h-10'>
-                                                                        <span className='text-xl'>
-                                                                            <CiBookmark />
-                                                                        </span>
-                                                                    </div>
+                                                            </div>
+                                                            <div className='flex gap-3'>
+                                                                <div className='bg-gray-100 flex justify-center items-center rounded-full w-10 h-10' onClick={() => toggleIcons(idx)}>
+                                                                    <span className='text-xl opacity-50 cursor-pointer'>
+                                                                        <HiOutlineShare />
+                                                                    </span>
+                                                                </div>
+                                                                <div className={`bg-white  px-2 py-2 rounded-md absolute  right-8 transition-all duration-500 ${activeIconsIdx === idx ? ' opacity-100 bottom-[70px]' : ' opacity-0 bottom-12'}`}>
+                                                                    {activeIconsIdx === idx && (
+                                                                        <div>
+                                                                            <p className="text-xs pb-1 block">Share On:</p>
+                                                                            <div className="flex gap-2">
+                                                                                {social.map((item, index) => (
+                                                                                    <div key={index}>
+                                                                                        {item.platform === 'facebook' && (
+                                                                                            <FacebookShareButton url={slug}>
+                                                                                                <span className="text-blue-500">  <BsFacebook size={23} round /> </span>
+                                                                                            </FacebookShareButton>
+                                                                                        )}
+                                                                                        {item.platform === 'twitter' && (
+                                                                                            <TwitterShareButton url={slug}>
+                                                                                                <span className="text-blue-500"> <BsTwitter size={23} round /> </span>
+                                                                                            </TwitterShareButton>
+                                                                                        )}
+                                                                                        {item.platform === 'pinterest' && (
+                                                                                            <PinterestShareButton url={slug} media={slug}>
+                                                                                                <span className=" text-red-500">  <BsPinterest size={23} round /> </span>
+                                                                                            </PinterestShareButton>
+                                                                                        )}
+                                                                                    </div>
+                                                                                ))}
+                                                                            </div>
+                                                                        </div>
+                                                                    )}
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </Link>
+                                                    </div>
                                                 );
                                             })}
                                         </div>
@@ -132,6 +179,19 @@ const Blog = () => {
 };
 
 export default Blog;
+
+
+const social = [
+    {
+        platform: 'facebook',
+    },
+    {
+        platform: 'twitter',
+    },
+    {
+        platform: 'pinterest',
+    },
+];
 
 export const DataA = [
     {
