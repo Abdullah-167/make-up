@@ -1,11 +1,10 @@
-// pages/categories/[category].js
-
+import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { nailcareCatData } from '../../lib/nailcareCat';
 import Layout from '@/Components/Common/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 
 const EyesCatPage = ({ pageData }: any) => {
