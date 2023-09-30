@@ -29,21 +29,6 @@ const EyesCatPage = ({ pageData }: any) => {
         return <div>Loading...</div>;
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY >= 50) {
-                setScrollDown(true);
-            } else {
-                setScrollDown(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -53,35 +38,33 @@ const EyesCatPage = ({ pageData }: any) => {
     return (
         <main>
             <Layout>
-                <section>
-                    {!scrollDown && (
-                        <form className="fixed inset-x-0 top-[85px] z-[100] bg-white bg-opacity-50 py-5">
-                            <div className='flex items-center max-w-[500px] mx-auto px-5'>
-                                <label className="sr-only">Search</label>
-                                <div className="relative w-full">
-                                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                        <svg className={`w-4 h-4 ${scrollDown ? 'text-tertiary dark:text-tertiary' : 'text-black dark:text-black'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.15 5.6h.01m3.337 1.913h.01m-6.979 0h.01M5.541 11h.01M15 15h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 2.043 11.89 9.1 9.1 0 0 0 7.2 19.1a8.62 8.62 0 0 0 3.769.9A2.013 2.013 0 0 0 13 18v-.857A2.034 2.034 0 0 1 15 15Z" />
-                                        </svg>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        id="voice-search"
-                                        className={`text-gray-900 text-sm rounded-lg outline-none border-[1.5px]  block w-full pl-10 p-2.5  dark:text-black  ${scrollDown ? 'placeholder:text-tertiary focus:ring-tertiary focus:border-tertiary' : 'placeholder:text-black focus:ring-black focus:border-black'}`}
-                                        placeholder="Search Articles Here..."
-                                        onChange={(e) => handleSearch(e.target.value)}
-                                        required />
+            <section className=' '>
+                    <form className="pt-32 pb-14">
+                        <div className='flex items-center max-w-[500px] mx-auto px-5'>
+                            <label className="sr-only">Search</label>
+                            <div className="relative w-full">
+                                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg className={`w-4 h-4 text-tertiary dark:text-tertiary`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 21 21">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.15 5.6h.01m3.337 1.913h.01m-6.979 0h.01M5.541 11h.01M15 15h2.706a1.957 1.957 0 0 0 1.883-1.325A9 9 0 1 0 2.043 11.89 9.1 9.1 0 0 0 7.2 19.1a8.62 8.62 0 0 0 3.769.9A2.013 2.013 0 0 0 13 18v-.857A2.034 2.034 0 0 1 15 15Z" />
+                                    </svg>
                                 </div>
-                                <button type="submit" className={`inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-tertiary rounded-lg border border-tertiary`}>
-                                    <svg className="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                                    </svg>Search
-                                </button>
+                                <input
+                                    type="text"
+                                    id="voice-search"
+                                    className={`text-gray-900 text-sm rounded-lg outline-none border-[1.5px]  block w-full pl-10 p-2.5  dark:text-black placeholder:text-tertiary focus:ring-tertiary focus:border-tertiary border-tertiary`}
+                                    placeholder="Search Articles Here..."
+                                    onChange={(e) => handleSearch(e.target.value)}
+                                    required />
                             </div>
-                        </form>
-                    )}
+                            <button type="submit" className={`inline-flex items-center py-2.5 px-3 ml-2 text-sm font-medium text-white bg-tertiary rounded-lg border border-tertiary`}>
+                                <svg className="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>Search
+                            </button>
+                        </div>
+                    </form>
                     <div className='max-w-[1250px] mx-auto'>
-                        <div className=' pb-10 sm:pb-20 px-5 pt-52'>
+                        <div className=' pb-10 sm:pb-20 px-5 '>
                             <div key={pageData.url}>
                                 {!searchQuery && (
                                     <div>
