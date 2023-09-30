@@ -1,7 +1,7 @@
 export const eyesCatData = [
     {
         url: 'eyeliner',
-        mainHeading: 'Latest Lipstick Articles',
+        mainHeading: 'Latest Eyeliner Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
         mainCards: [
             {
@@ -76,7 +76,7 @@ export const eyesCatData = [
     },
     {
         url: 'mascara',
-        mainHeading: 'Featured Eyes Blogs',
+        mainHeading: 'Featured Mascara Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
         mainCards: [
             {
@@ -151,7 +151,7 @@ export const eyesCatData = [
     },
     {
         url: 'kajal',
-        mainHeading: 'Featured Foundation Blogs',
+        mainHeading: 'Featured Kajal Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
         mainCards: [
             {
@@ -226,7 +226,7 @@ export const eyesCatData = [
     },
     {
         url: 'eye-Shadow',
-        mainHeading: 'Featured Skin Care Blogs',
+        mainHeading: 'Featured Eye Shadow Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
         mainCards: [
             {
@@ -301,7 +301,7 @@ export const eyesCatData = [
     },
     {
         url: 'eye-primers',
-        mainHeading: 'Featured Nail Care Blogs',
+        mainHeading: 'Featured Eye Primers Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
         mainCards: [
             {
@@ -376,7 +376,7 @@ export const eyesCatData = [
     },
     {
         url: 'eyelash-extensions',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Eyelash Extensions Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {
@@ -451,7 +451,7 @@ export const eyesCatData = [
     },
     {
         url: 'eye-glitter',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Eye Glitter Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {
@@ -526,7 +526,7 @@ export const eyesCatData = [
     },
     {
         url: 'eye-concealer',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Eye Eoncealer Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {

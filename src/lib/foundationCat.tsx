@@ -1,7 +1,7 @@
 export const foundationCatData = [
     {
         url: 'liquid-foundation',
-        mainHeading: 'Latest Lipstick Articles',
+        mainHeading: 'Latest Liquid Foundation Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
         mainCards: [
             {
@@ -76,7 +76,7 @@ export const foundationCatData = [
     },
     {
         url: 'serum-foundation',
-        mainHeading: 'Featured Eyes Blogs',
+        mainHeading: 'Featured Serum Foundation Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
         mainCards: [
             {
@@ -151,7 +151,7 @@ export const foundationCatData = [
     },
     {
         url: 'cream-foundation',
-        mainHeading: 'Featured Foundation Blogs',
+        mainHeading: 'Featured Cream Foundation Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
         mainCards: [
             {
@@ -225,8 +225,8 @@ export const foundationCatData = [
         ]
     },
     {
-        url: 'cream-foundation',
-        mainHeading: 'Featured Skin Care Blogs',
+        url: 'stick-foundation',
+        mainHeading: 'Featured Stick Foundation Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
         mainCards: [
             {
@@ -301,7 +301,7 @@ export const foundationCatData = [
     },
     {
         url: 'powder-foundation',
-        mainHeading: 'Featured Nail Care Blogs',
+        mainHeading: 'Featured Powder Foundation Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
         mainCards: [
             {
