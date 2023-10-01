@@ -28,7 +28,7 @@ const SideBar = () => {
     };
 
     return (
-        <aside className='max-w-[300px] min-w-[160px]  z-[4200] lg:z-[100] bg-white'>
+        <aside className='max-w-[300px] min-w-[160px]  z-[4200]  bg-white'>
             <div className=''>
                 <div className=' flex justify-between pr-2 pb-5 items-center'>
                     <div className='text-xl font-semibold px-2 flex items-center gap-1 '>

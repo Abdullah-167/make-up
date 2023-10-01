@@ -27,7 +27,7 @@ const BlogCards = () => {
     return (
         <section>
             <Container>
-                <div className='pb-20'>
+                <div className='pb-20 '>
                     {data.map((item, index) => {
                         return (
                             <div     key={index}>
@@ -59,7 +59,7 @@ const BlogCards = () => {
                                     <div className='lg:flex hidden'>
                                         <SideBar />
                                     </div>
-                                    <div className={` w-full  max-w-[300px]  bg-white fixed top-0 z-[2700] lg:z-[100] py-5 h-full transition-all duration-700 shadow-md  right-0 ${toggelSidebar ? ' left-0 block z-[400]' : '  -left-[400px]  opacity-0 h-0'}`}>
+                                    <div className={` w-full  max-w-[300px]  bg-white fixed top-0 z-[4000] lg:z-[100] py-5 h-full transition-all duration-700 shadow-md  right-0 ${toggelSidebar ? ' left-0 block z-[400]' : '  -left-[400px]  opacity-0 h-0'}`}>
                                         {toggelSidebar && (
                                             <div className=' relative  max-w-[300px] '>
                                                 <SideBar />
