@@ -66,7 +66,6 @@ const BlogCards = () => {
                                                 <span className='text-2xl cursor-pointer absolute pt-1 top-0 right-1' onClick={handleSidebar}><RxCross2 /></span>
                                             </div>
                                         )}
-
                                     </div>
                                     <div className='px-2 mb-5 lg:hidden block'>
                                         <div className='text-xl font-semibold flex items-center gap-1' onClick={handleSidebar}>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import Container from './Container';
-import { IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowUp, IoMdArrowDropdown } from 'react-icons/io';
 import { CgMenuLeft } from 'react-icons/cg';
 import { RxCross1 } from 'react-icons/rx';
 import Link from 'next/link';
@@ -174,17 +174,14 @@ const Navbar: React.FC = () => {
                                             onClick={() => toggleMenu(item.id)}
                                         >
                                             <h3 className='font-semibold'>{item.heading}</h3>
-                                            {resNav === item.id ? (
-                                                <span className='text-xl'>-</span>
-                                            ) : (
-                                                <span className='text-xl'>+</span>
-                                            )}
+                                            <span className={`text-xl transition-all duration-300 ${resNav === item.id ? ' rotate-180' : ''}`}><IoMdArrowDropdown /></span>
+
                                         </div>
                                         <div
                                             className={`overflow-hidden transition-all duration-500 ${resNav === item.id ? 'max-h-[300px]' : 'max-h-0'
                                                 }`}
                                         >
-                                            {item.category.map((innerCat: any , idx : any) => (
+                                            {item.category.map((innerCat: any, idx: any) => (
                                                 <Link href={innerCat.url} key={idx}> <p className='text-sm pb-2 cursor-pointer'>{innerCat.catOne}</p> </Link>
                                             ))}
                                         </div>
