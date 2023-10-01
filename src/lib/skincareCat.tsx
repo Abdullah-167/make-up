@@ -1,7 +1,7 @@
 export const skinCareCatDdata = [
     {
         url: 'cleanser',
-        mainHeading: 'Latest Lipstick Articles',
+        mainHeading: 'Latest Cleanser Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
         mainCards: [
             {
@@ -76,7 +76,7 @@ export const skinCareCatDdata = [
     },
     {
         url: 'moisturizer',
-        mainHeading: 'Featured Eyes Blogs',
+        mainHeading: 'Featured Moisturizer Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
         mainCards: [
             {
@@ -151,7 +151,7 @@ export const skinCareCatDdata = [
     },
     {
         url: 'sunscreen',
-        mainHeading: 'Featured Foundation Blogs',
+        mainHeading: 'Featured Sunscreen Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
         mainCards: [
             {
@@ -226,7 +226,7 @@ export const skinCareCatDdata = [
     },
     {
         url: 'serums',
-        mainHeading: 'Featured Skin Care Blogs',
+        mainHeading: 'Featured Serums Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
         mainCards: [
             {
@@ -301,7 +301,7 @@ export const skinCareCatDdata = [
     },
     {
         url: 'toners',
-        mainHeading: 'Featured Nail Care Blogs',
+        mainHeading: 'Featured Toners Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
         mainCards: [
             {
@@ -376,7 +376,7 @@ export const skinCareCatDdata = [
     },
     {
         url: 'Masks',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Masks Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {

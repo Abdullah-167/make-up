@@ -113,16 +113,18 @@ const Navbar: React.FC = () => {
                                                 >
                                                     {link.innerLink.map((item, innerIndex) => (
                                                         <div className={` mb-2 ${scrollDown ? 'links-two' : 'links'}`} key={innerIndex}>
-                                                            <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                {item.link}
-                                                            </span>
+                                                            <Link href={(item as { link: string }).link}>
+                                                                <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                    {item.link}
+                                                                </span>
+                                                            </Link>
                                                         </div>
                                                     ))}
                                                 </ul>
                                             )}
                                             {link.makeUp && (
                                                 <ul
-                                                    className={`mega-menu pt-7 z-[2000] text-sm shadow w-[870px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                                    className={`mega-menu pt-7 z-[2000] text-sm shadow w-[900px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
                                                 >
                                                     <div className=' flex justify-evenly'>
                                                         {link.innerMakeUp?.map((item, idx) => {
@@ -258,6 +260,20 @@ const links = [
                 ]
             },
             {
+                heading: 'Hairs',
+                url: '/eyes',
+                lipsInner: [
+                    { link: 'Hair Styles', url: '/hairs/hair-styles' },
+                    { link: 'Shampoo and Conditioner', url: '/hairs/shampoo-and-conditioner' },
+                    { link: 'Hair Treatments', url: '/hairs/hair-treatments' },
+                    { link: 'Hair Care Routines', url: '/hairs/hair-care-routines' },
+                    { link: 'Hair Oils', url: '/hairs/hair-oils' },
+                    { link: 'Hair Serums', url: '/hairs/hair-serums' },
+                    { link: `Men's Hair Care`, url: '/hairs/men-hair-care' },
+                    { link: `Women's Hair Care`, url: '/hairs/women-hair-care' },
+                ]
+            },
+            {
                 heading: 'Foundation',
                 url: '/foundation',
                 lipsInner: [
@@ -314,12 +330,24 @@ const links = [
     },
     {
         mainLink: 'Makeup Tutorials',
-        url: '/',
+        url: '/blogs',
         innerLink: [
-            { link: 'Eye Makeup Tutorials', url: '/lips/lipgloss' },
-            { link: 'Face Makeup Tutorials', url: '/lips/lipliner' },
-            { link: 'Lip Makeup Tutorials', url: '/lips/lipstick' },
-            { link: 'Makeup Trends', url: '/lips/lipstick' },
+            {
+                link: 'Eye Makeup Tutorials',
+                url: '/makeup-tutorials/eye-makeup-tutorials'
+            },
+            {
+                link: 'Face Makeup Tutorials',
+                url: '/makeup-tutorials/face-makeup-tutorials'
+            },
+            {
+                link: 'Lip Makeup Tutorials',
+                url: '/makeup-tutorials/lip-makeup-tutorials'
+            },
+            {
+                link: 'Makeup Trends',
+                url: '/makeup-tutorials/makeup-trends'
+            },
         ],
     },
     {
@@ -414,6 +442,45 @@ const resMenu = [
     },
     {
         id: 3,
+        heading: 'Hairs',
+        category: [
+            {
+                catOne: 'Hair Styles',
+                url: '/hairs/hair-styles'
+            },
+            {
+                catOne: 'Shampoo and Conditioner',
+                url: '/hairs/shampoo-and-conditioner'
+            },
+            {
+                catOne: 'Hair Treatments',
+                url: '/hairs/hair-treatments'
+            },
+            {
+                catOne: `Hair Care Routine's`,
+                url: '/hairs/hair-care-routines'
+            },
+            {
+                catOne: 'Hair Oils',
+                url: '/hairs/hair-oils'
+            },
+            {
+                catOne: 'Hair Serums',
+                url: '/hairs/hair-serums'
+
+            },
+            {
+                catOne: `Men's Hair Care`,
+                url: '/hairs/men-hair-care'
+            },
+            {
+                catOne: `Women's Hair Care`,
+                url: '/hairs/women-hair-care'
+            },
+        ]
+    },
+    {
+        id: 4,
         heading: 'Eyes',
         category: [
             {
@@ -451,7 +518,7 @@ const resMenu = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         heading: 'Foundation',
         category: [
             {
@@ -477,7 +544,7 @@ const resMenu = [
         ]
     },
     {
-        id: 5,
+        id: 6,
         heading: 'Skin Care',
         category: [
             {
@@ -507,7 +574,7 @@ const resMenu = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         heading: 'Nail Care',
         category: [
             {
@@ -541,7 +608,7 @@ const resMenu = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         heading: 'Makeup Tools',
         category: [
             {

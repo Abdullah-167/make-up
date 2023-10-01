@@ -1,7 +1,7 @@
 export const nailcareCatData = [
     {
         url: 'nail-polish',
-        mainHeading: 'Latest Lipstick Articles',
+        mainHeading: 'Latest Nail Polish Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
         mainCards: [
             {
@@ -76,7 +76,7 @@ export const nailcareCatData = [
     },
     {
         url: 'base-coat',
-        mainHeading: 'Featured Eyes Blogs',
+        mainHeading: 'Featured Base Coat Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
         mainCards: [
             {
@@ -151,7 +151,7 @@ export const nailcareCatData = [
     },
     {
         url: 'top-coat',
-        mainHeading: 'Featured Foundation Blogs',
+        mainHeading: 'Featured Top Coat Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
         mainCards: [
             {
@@ -226,7 +226,7 @@ export const nailcareCatData = [
     },
     {
         url: 'nail-file',
-        mainHeading: 'Featured Skin Care Blogs',
+        mainHeading: 'Featured Nail File Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
         mainCards: [
             {
@@ -301,7 +301,7 @@ export const nailcareCatData = [
     },
     {
         url: 'cuticle-Oil',
-        mainHeading: 'Featured Nail Care Blogs',
+        mainHeading: 'Featured Cuticle Oil Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
         mainCards: [
             {
@@ -376,7 +376,7 @@ export const nailcareCatData = [
     },
     {
         url: 'nail-strengthener',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Nail Strengthener Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {
@@ -451,7 +451,7 @@ export const nailcareCatData = [
     },
     {
         url: 'nail-hygiene',
-        mainHeading: 'Featured Makeup Tools Blogs',
+        mainHeading: 'Featured Nail Hygiene Blogs',
         catHeading: 'Who Are You And Why Are you',
         mainCards: [
             {
