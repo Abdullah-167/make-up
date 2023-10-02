@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
                                                 >
                                                     {link.innerLink.map((item, innerIndex) => (
                                                         <div className={` mb-2 ${scrollDown ? 'links-two' : 'links'}`} key={innerIndex}>
-                                                            <Link href={(item as { link: string }).link}>
+                                                            <Link href={(item as { url: string }).url}>
                                                                 <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
                                                                     {item.link}
                                                                 </span>
@@ -261,7 +261,7 @@ const links = [
             },
             {
                 heading: 'Hairs',
-                url: '/eyes',
+                url: '/hairs',
                 lipsInner: [
                     { link: 'Hair Styles', url: '/hairs/hair-styles' },
                     { link: 'Shampoo and Conditioner', url: '/hairs/shampoo-and-conditioner' },

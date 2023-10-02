@@ -114,6 +114,7 @@ const CategoryPage = ({ pageData }: any) => {
                                             ))}
                                 </div>
                             </div>
+                            <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                         </div>
                     </div>
                 </section>

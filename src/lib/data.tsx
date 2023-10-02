@@ -81,37 +81,37 @@ export const blogData = [
     mainCards: [
       {
         img: '/imgfour.png',
-        cat: 'Lipstick',
+        cat: 'Eyeliner',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/beautifullgirl.jpg',
-        cat: 'Lip Gloss',
+        cat: 'Mascara',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/phithree.webp',
-        cat: 'Lip liner',
+        cat: 'Kajal',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/womenmakeup.webp',
-        cat: 'Lip Balm',
+        cat: 'Eye Shadow',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/women3.webp',
-        cat: 'Lip Stain',
+        cat: 'Eye Concealer',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/style.jpg',
-        cat: 'Lip Mask',
+        cat: 'Eyelash Extensions',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
@@ -156,37 +156,37 @@ export const blogData = [
     mainCards: [
       {
         img: '/imgfour.png',
-        cat: 'Lipstick',
+        cat: 'Liquid Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/beautifullgirl.jpg',
-        cat: 'Lip Gloss',
+        cat: 'Serum Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/phithree.webp',
-        cat: 'Lip liner',
+        cat: 'Cream Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/womenmakeup.webp',
-        cat: 'Lip Balm',
+        cat: 'Stick Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/women3.webp',
-        cat: 'Lip Stain',
+        cat: 'Powder Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
       {
         img: '/style.jpg',
-        cat: 'Lip Mask',
+        cat: 'Long-Wear Foundation',
         country: 'United States',
         listings: 'Almost 40 Blogs'
       },
@@ -377,6 +377,81 @@ export const blogData = [
   {
     url: 'makeuptools',
     mainHeading: 'Featured Makeup Tools Blogs',
+    catHeading: 'Top Choosen Categories For Makeup Tools',
+    mainCards: [
+      {
+        img: '/imgfour.png',
+        cat: 'Lipstick',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/beautifullgirl.jpg',
+        cat: 'Lip Gloss',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/phithree.webp',
+        cat: 'Lip liner',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/womenmakeup.webp',
+        cat: 'Lip Balm',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/women3.webp',
+        cat: 'Lip Stain',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/style.jpg',
+        cat: 'Lip Mask',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+    ],
+    secondaryCards: [
+      {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/style.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/imgfour.png',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/womenmakeup.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/phithree.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+    ]
+  },
+  {
+    url: 'hairs',
+    mainHeading: 'Featured Hair Care Blogs',
     catHeading: 'Top Choosen Categories For Makeup Tools',
     mainCards: [
       {

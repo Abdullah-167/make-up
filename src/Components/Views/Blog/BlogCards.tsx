@@ -30,7 +30,7 @@ const BlogCards = () => {
                 <div className='pb-20 '>
                     {data.map((item, index) => {
                         return (
-                            <div     key={index}>
+                            <div key={index}>
                                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 pb-16'
                                 >
                                     {item.mainCards.map((mainCard, mainIdx) => {
@@ -115,6 +115,7 @@ const BlogCards = () => {
                                                     ))}
                                         </div>
                                     </div>
+                                    <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                                 </div>
                             </div>
                         )

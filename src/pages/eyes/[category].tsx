@@ -38,7 +38,7 @@ const EyesCatPage = ({ pageData }: any) => {
     return (
         <main>
             <Layout>
-            <section className=' '>
+                <section className=' '>
                     <form className="pt-32 pb-10 sm:pb-14">
                         <div className='flex items-center max-w-[500px] mx-auto px-5'>
                             <label className="sr-only">Search</label>
@@ -67,14 +67,14 @@ const EyesCatPage = ({ pageData }: any) => {
                         <div className=' pb-10 sm:pb-20 px-5 '>
                             <div key={pageData.url}>
                                 {!searchQuery && (
-                                     <div>
-                                       <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
-                                       <div className='flex gap-2 items-center justify-center pb-9'>
-                                           <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                           <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
-                                           <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                       </div>
-                                   </div>
+                                    <div>
+                                        <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
+                                        <div className='flex gap-2 items-center justify-center pb-9'>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
+                                            <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
+                                        </div>
+                                    </div>
                                 )}
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16'>
                                     {pageData.secondaryCards
@@ -114,6 +114,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                             ))}
                                 </div>
                             </div>
+                            <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                         </div>
                     </div>
                 </section>

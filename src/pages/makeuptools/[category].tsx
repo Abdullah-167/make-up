@@ -29,7 +29,7 @@ const EyesCatPage = ({ pageData }: any) => {
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
-    
+
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
@@ -66,14 +66,14 @@ const EyesCatPage = ({ pageData }: any) => {
                         <div className=' pb-10 sm:pb-20 px-5 '>
                             <div key={pageData.url}>
                                 {!searchQuery && (
-                                     <div>
-                                       <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
-                                       <div className='flex gap-2 items-center justify-center pb-9'>
-                                           <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                           <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
-                                           <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                       </div>
-                                   </div>
+                                    <div>
+                                        <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
+                                        <div className='flex gap-2 items-center justify-center pb-9'>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
+                                            <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
+                                            <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
+                                        </div>
+                                    </div>
                                 )}
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16'>
                                     {pageData.secondaryCards
@@ -113,9 +113,10 @@ const EyesCatPage = ({ pageData }: any) => {
                                             ))}
                                 </div>
                             </div>
+                            <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                         </div>
                     </div>
-                    <div className="flex justify-center pb-10">
+                    {/* <div className="flex justify-center pb-10">
                         <a href="#" className="flex items-center justify-center px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md cursor-not-allowed rtl:-scale-x-100 dark:bg-[#F9F2E8] ">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -142,7 +143,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
                         </a>
-                    </div>
+                    </div> */}
                 </section>
             </Layout>
         </main >
