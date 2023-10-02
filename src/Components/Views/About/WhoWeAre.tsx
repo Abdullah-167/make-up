@@ -10,9 +10,9 @@ const WhoWeAre = () => {
                         <div className='pb-10'
                             key={index}>
                             {item.isHeading && (
-                                <h1 className='text-3xl font-semibold pb-5 text-center'>{item.heading}</h1>
+                                <h1 className='text-2xl sm:text-3xl font-semibold pb-5 text-center'>{item.heading}</h1>
                             )}
-                            <p className='text-xl font-normal text-gray-500 text-center'>{item.para}</p>
+                            <p className='sm:text-xl font-normal text-gray-500 text-center'>{item.para}</p>
                         </div>
                     )
                 })}
