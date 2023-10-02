@@ -413,3 +413,18 @@ body {
 /* ... (previous styles) */
 
 /* Custom transition classes */
+
+
+
+.black-heading {
+  color: black;
+}
+
+.show-image {
+  display: block !important;
+}
+
+/* Initially hide all images */
+.image-container {
+  display: none;
+}
