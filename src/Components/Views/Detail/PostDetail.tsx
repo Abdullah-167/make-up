@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { BsFacebook, BsTwitter, BsPinterest } from 'react-icons/bs'
 import { HiOutlineShare } from 'react-icons/hi'
 import { TfiAlarmClock } from 'react-icons/tfi'
+import { HiCalendarDays } from 'react-icons/hi2'
 import { FacebookShareButton, TwitterShareButton, PinterestShareButton } from 'react-share'
 
 const PostDetail = () => {
@@ -30,10 +31,17 @@ const PostDetail = () => {
                         <div className='flex justify-center items-center relative'>
                             <div>
                                 <h1 className='text-white text-3xl sm:text-5xl tracking-tighter font-semibold pb-4 leading-10'>How to clean the inside of a lip gloss tube</h1>
-                                <div className='text-white flex gap-2 items-center pb-14'>
-                                    <span className='text-xl'>  <TfiAlarmClock /> </span>
-                                    <span>•</span>
-                                    <p className=' text-white'>5 Minutes Read</p>
+                                <div className='text-white flex gap-5 items-center pb-14'>
+                                    <div className='text-white flex gap-2 items-center'>
+                                        <span className='text-xl'>  <TfiAlarmClock /> </span>
+                                        <span>•</span>
+                                        <p className=' text-white'>5 Minutes Read</p>
+                                    </div>
+                                    -
+                                    <div className='text-white flex gap-2 items-center'>
+                                        <span><HiCalendarDays /></span>
+                                        <p className='text-lg pt-0.5'>{formattedDate}</p>
+                                    </div>
                                 </div>
                                 <div className='flex gap-20 items-center'>
                                     <div>
@@ -45,7 +53,6 @@ const PostDetail = () => {
                                                 <Image src={'/padhana.jpg'} className=' rounded-full border-2 border-white p-0.5 cursor-pointer' alt='icon' width={60} height={60} />
                                                 <div className='text-white text-xl font-medium'>
                                                     Abdullah Padhana
-                                                    <p className='text-lg opacity-80 pt-0.5'>{formattedDate}</p>
                                                 </div>
                                             </div>
                                             <div className='bg-gray-100 flex justify-center items-center rounded-full w-10 h-10 cursor-pointer' onClick={toggleIcons}>
