@@ -1,25 +1,90 @@
 import Container from '@/Components/Common/Layout/Container'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
+import { BsFacebook, BsTwitter, BsPinterest } from 'react-icons/bs'
+import { HiOutlineShare } from 'react-icons/hi'
+import { FacebookShareButton, TwitterShareButton, PinterestShareButton } from 'react-share'
 
 const PostDetail = () => {
+
+    const [activeIconsIdx, setActiveIconsIdx] = useState(false);
+
+    const toggleIcons = () => {
+        setActiveIconsIdx(!activeIconsIdx)
+    };
+
     return (
         <section>
             <div>
                 <div className='relative mt-[100px] max-h-[500px]'>
                     <Image className='max-h-[500px] object-cover w-full rounded-md my-2' src={'/womenmakeup.webp'} alt={''} width={1000} height={1000} />
                     <div className=' bg-black bg-opacity-70 absolute w-full h-full top-0'></div>
-                    <Container>
-                        <div className='z-[200] absolute top-0 pt-20 left-[10%] xl:left-[10%] 2xl:left-[15%] max-w-screen-lg mx-auto'>
-                            <div className='flex justify-center items-center'>
-                                <h1 className=' text-white text-5xl tracking-tighter font-semibold '>How to clean the inside of a lip gloss tube</h1>
+                </div>
+                <Container>
+                    <div className='z-[200] absolute top-0 pt-[240px] left-[2%] xl:left-[5%] 2xl:left-[15%] max-w-screen-lg mx-auto'>
+                        <div className='flex justify-center items-center relative'>
+                            <div>
+                                <h1 className=' text-white text-5xl tracking-tighter font-semibold pb-16'>How to clean the inside of a lip gloss tube</h1>
+                                <div className='flex gap-20'>
+                                    <div className='flex items-center gap-4'>
+                                        <Image src={'/girlicon.png'} alt='icon' width={50} height={50} />
+                                        <div className=' text-white'>
+                                            padhana
+                                            <p className='text-xs opacity-40 pt-0.5'>May 20, 2020</p>
+                                        </div>
+                                    </div>
+                                    <div className='bg-gray-100 flex justify-center items-center rounded-full w-10 h-10' onClick={toggleIcons}>
+                                        <span className='text-xl opacity-50 cursor-pointer'>
+                                            <HiOutlineShare />
+                                        </span>
+                                    </div>
+                                    <div className={`bg-white  px-2 py-2 rounded-md absolute  right-8 transition-all duration-200 ${activeIconsIdx ? ' opacity-100 bottom-[70px]' : ' opacity-0 bottom-12'}`}>
+                                        <div>
+                                            <p className="text-xs pb-1 block">Share On:</p>
+                                            <div className="flex gap-2">
+                                                {social.map((item, index) => (
+                                                    <div key={index}>
+                                                        {item.platform === 'facebook' && (
+                                                            <FacebookShareButton url={'post heaindd'}>
+                                                                <span className="text-blue-500">  <BsFacebook size={23} round /> </span>
+                                                            </FacebookShareButton>
+                                                        )}
+                                                        {item.platform === 'twitter' && (
+                                                            <TwitterShareButton url={'post heaindd'}>
+                                                                <span className="text-blue-500"> <BsTwitter size={23} round /> </span>
+                                                            </TwitterShareButton>
+                                                        )}
+                                                        {item.platform === 'pinterest' && (
+                                                            <PinterestShareButton url={'post heaindd'} media={'post heaindd'}>
+                                                                <span className=" text-red-500">  <BsPinterest size={23} round /> </span>
+                                                            </PinterestShareButton>
+                                                        )}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </Container>
-                </div>
-            </div>
-        </section>
+                    </div>
+                </Container>
+            </div >
+        </section >
     )
 }
 
 export default PostDetail
+
+
+const social = [
+    {
+        platform: 'facebook',
+    },
+    {
+        platform: 'twitter',
+    },
+    {
+        platform: 'pinterest',
+    },
+];
