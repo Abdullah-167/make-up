@@ -44,7 +44,7 @@ const BlogCards = () => {
                                                     <Image className={`rounded-md transition-all duration-500 hover:scale-105 w-full h-full object-cover  ${mainIdx > 0 ? 'max-h-[300px] md:max-h-[236px]' : 'min-w- lg:max-h-[460px] xl:max-h-[590px]'}`} src={mainCard.img} alt={'lifehack-img'} width={500} height={500} />
                                                 </div>
                                                 <Link href={'/'}>
-                                                    <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D] block'>{mainCard.category}</span>
+                                                    <span className='text-sm pb-1 text-tertiary font-semibold block'>{mainCard.category}</span>
                                                 </Link>
                                                 <h1 className="text-xl pb-2">
                                                     {mainCard.heading}
@@ -55,7 +55,7 @@ const BlogCards = () => {
                                     })}
                                 </div>
                                 <p className='text-3xl sm:text-5xl font-semibold sm:text-center pb-12'>Our Featured <span className='text-tertiary'> {`Artile's`} </span></p>
-                                <div className='lg:flex gap-10 justify-between w-full relative'>
+                                <div className='lg:flex gap-10 justify-between w-full relative pb-16'>
                                     <div className='lg:flex hidden'>
                                         <SideBar />
                                     </div>
@@ -115,8 +115,8 @@ const BlogCards = () => {
                                                     ))}
                                         </div>
                                     </div>
-                                    <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                                 </div>
+                                <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
                             </div>
                         )
                     })}

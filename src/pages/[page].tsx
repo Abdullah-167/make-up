@@ -10,6 +10,8 @@ const Page = ({ pageData }: any) => {
 
     const [searchQuery, setSearchQuery] = useState("");
     const [isInputVisible, setInputVisible] = useState(true);
+    const [numCardsToShow, setNumCardsToShow] = useState(10); // Number of cards to initially show
+    const [isLoading, setIsLoading] = useState(false); // Add isLoading state
 
     const handleSearch = (query: any) => {
         setSearchQuery(query);
@@ -19,6 +21,21 @@ const Page = ({ pageData }: any) => {
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
+
+
+    const loadMoreCards = () => {
+        setIsLoading(true); // Set loading state to true when loading more cards
+        setTimeout(() => {
+            if (numCardsToShow + 4 >= pageData.secondaryCards.length) {
+                // If there are no more cards to load
+                setNumCardsToShow(pageData.secondaryCards.length);
+            } else {
+                // Load 4 more cards
+                setNumCardsToShow(numCardsToShow + 4);
+            }
+            setIsLoading(false); // Set loading state to false when done loading cards
+        }, 1000); // Simulating a loading delay (replace with actual card loading logic)
+    };
 
     return (
         <main>
@@ -81,21 +98,16 @@ const Page = ({ pageData }: any) => {
                                         </div>
                                     </div>)}
                                 <p className='text-3xl sm:text-5xl font-semibold pb-10 md:block hidden'>Our Latest Articles</p>
-                                <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16'>
+                                <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
                                     {pageData.secondaryCards
                                         .filter((secCard: any) =>
                                             secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
                                         )
-                                        .length === 0 ? (
-                                        <p className="text-xl">Nothing found related to your search</p>
-                                    ) : (
-                                        pageData.secondaryCards
-                                            .filter((secCard: any) =>
-                                                secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
-                                            )
-                                            .map((secCard: any, secIdx: any) => (
+                                        .slice(0, numCardsToShow)
+                                        .map((secCard: any, secIdx: any) => (
+                                            <div className='flex gap-3 w-full'>
                                                 <div
-                                                    className={`cursor-pointer rounded-md`}
+                                                    className={`cursor-pointer rounded-md sm:max-w-[280px] min-w-[280px] `}
                                                     key={secIdx}
                                                 >
                                                     <div className={`overflow-hidden pb-2 `}>
@@ -108,18 +120,53 @@ const Page = ({ pageData }: any) => {
                                                         />
                                                     </div>
                                                     <Link href={'/'}>
-                                                        <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D]'>{secCard.category}</span>
+                                                        <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D] block'>{secCard.category}</span>
                                                     </Link>
-                                                    <h1 className="text-xl inline-block group">
+                                                    <h1 className="text-xl pb-2">
                                                         {secCard.heading}
                                                     </h1>
                                                     <span className='text-sm pb-1 text-gray-500'>By {secCard.author} <span className='pl-2'> - </span> <span className='pl-2'> {formattedDate} </span></span>
                                                 </div>
-                                            )
-                                            ))}
+                                                {isLoading && secIdx === numCardsToShow - 1 && (
+                                                    <div className="min-w-[280px] movie--isloading mx-auto">
+                                                        <div className="loading-image"></div>
+                                                        <div className="loading-content">
+                                                            <div className="loading-text-container">
+                                                                <div className="loading-category"></div>
+                                                                <div className="loading-main-text"></div>
+                                                                <div className="loading-sub-text"></div>
+                                                                <div className='flex gap-2 items-center'>
+                                                                    <div className="loading-author-name"></div>
+                                                                    <div className='loading-qoma'></div>
+                                                                    <div className="loading-date"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    {pageData.secondaryCards
+                                        .filter((secCard: any) =>
+                                            secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
+                                        )
+                                        .length === 0 ? (
+                                        <p className="text-xl">Nothing found related to your search</p>
+                                    ) : null}
                                 </div>
                             </div>
-                            <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
+                            {numCardsToShow >= pageData.secondaryCards.length ? (
+                                <span
+                                    className='px-3 bg-black border-[1.5px] border-black bg-transparent  cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[130px] text-center justify-center mx-auto'>
+                                    No More Data
+                                </span>
+                            ) : (
+                                <span
+                                    onClick={loadMoreCards}
+                                    className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[130px] text-center justify-center mx-auto'>
+                                    Load More
+                                </span>
+                            )}
                         </div>
                     </div>
                 </section>

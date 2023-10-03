@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 
 @tailwind base;
@@ -13,7 +13,9 @@
   box-sizing: border-box;
 }
 
-
+.lora {
+  font-family: 'Lora', serif;
+}
 
 body {
   font-family: 'Outfit', sans-serif;
@@ -427,4 +429,162 @@ body {
 /* Initially hide all images */
 .image-container {
   display: none;
+}
+
+
+/* Add this to your CSS stylesheet */
+.body-scroll-lock {
+  overflow: hidden;
+}
+
+
+
+
+.movie--isloading {
+  height: 352px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.movie--isloading .loading-image {
+  height: 248px;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #f4f4f4 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #f4f4f4 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #f4f4f4 40px, #ececec 80px);
+  background-size: 250px;
+  -webkit-animation: shine-loading-image 2s infinite ease-out;
+  animation: shine-loading-image 2s infinite ease-out;
+}
+
+.movie--isloading .loading-content {
+  background: #f7f7f7;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.movie--isloading .loading-content .loading-text-container {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+}
+
+.movie--isloading .loading-content .loading-main-text {
+  height: 10px;
+  width: 80%;
+  margin-bottom: 15px;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+
+.movie--isloading .loading-content .loading-author-name {
+  height: 10px;
+  width: 25%;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+
+.movie--isloading .loading-content .loading-date {
+  height: 10px;
+  width: 25%;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+
+.movie--isloading .loading-content .loading-qoma {
+  height: 5px;
+  width: 2%;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 100%;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+}
+
+.movie--isloading .loading-content .loading-category {
+  height: 10px;
+  width: 20%;
+  background: #ececec;
+  background-image: -webkit-linear-gradient(left, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-image: -o-linear-gradient(left, #ececec 0px, #242424 40px, #ececec 80px);
+  background-image: linear-gradient(90deg, #ececec 0px, #ddd 40px, #ececec 80px);
+  background-size: 250px;
+  border-radius: 10px;
+  -webkit-animation: shine-loading-container-items 2s infinite ease-out;
+  animation: shine-loading-container-items 2s infinite ease-out;
+  margin-bottom: 15px;
+}
+
+
+@-webkit-keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
+
+
+@keyframes shine-loading-image {
+  0% {
+    background-position: -32px;
+  }
+
+  40%,
+  100% {
+    background-position: 208px;
+  }
+}
+
+@-webkit-keyframes shine-loading-container-items {
+  0% {
+    background-position: -100px;
+  }
+
+  40%,
+  100% {
+    background-position: 140px;
+  }
+}
+
+@keyframes shine-loading-container-items {
+  0% {
+    background-position: -100px;
+  }
+
+  40%,
+  100% {
+    background-position: 140px;
+  }
 }

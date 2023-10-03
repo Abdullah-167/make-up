@@ -22,6 +22,21 @@ const Home = () => {
             <Blog />
             {/* <Video /> */}
             <LifeHack />
+            <div className="max-w-[400px] movie--isloading mx-auto">
+                <div className="loading-image"></div>
+                <div className="loading-content">
+                    <div className="loading-text-container">
+                        <div className="loading-category"></div>
+                        <div className="loading-main-text"></div>
+                        <div className="loading-sub-text"></div>
+                        <div className='flex gap-2 items-center'>
+                            <div className="loading-author-name"></div>
+                            <div className='loading-qoma'></div>
+                            <div className="loading-date"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <Instagram />
         </Layout>
     )

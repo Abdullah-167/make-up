@@ -96,6 +96,78 @@ export const lipcatData = [
                 author: 'Padhana',
                 heading: 'Who Are You And Why Are you'
             },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
+            {
+                img: '/phithree.webp',
+                category: 'Fondation',
+                author: 'Padhana',
+                heading: 'Who Are You And Why Are you'
+            },
         ]
     },
     {

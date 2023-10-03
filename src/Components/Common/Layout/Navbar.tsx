@@ -124,7 +124,11 @@ const Navbar: React.FC = () => {
                                             )}
                                             {link.makeUp && (
                                                 <ul
-                                                    className={`mega-menu pt-7 z-[2000] text-sm shadow w-[900px]  py-3 px-5 ${scrollDown ? ' bg-tertiary' : 'bg-white '}`}
+                                                    className={`mega-menu z-[2000] text-sm shadow w-[900px] pb-3 pt-8 px-5 ${scrollDown ? 'bg-tertiary' : 'bg-white'
+                                                        }`}
+                                                    style={{
+                                                        background: `linear-gradient(to bottom, transparent 30px,)`,
+                                                    }}
                                                 >
                                                     <div className=' flex justify-evenly'>
                                                         {link.innerMakeUp?.map((item, idx) => {

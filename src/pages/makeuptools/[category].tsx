@@ -11,9 +11,12 @@ import FaqSection from '@/Components/Common/Faq';
 
 const EyesCatPage = ({ pageData }: any) => {
 
+
     const [searchQuery, setSearchQuery] = useState("");
     const [isInputVisible, setInputVisible] = useState(true);
     const [scrollDown, setScrollDown] = useState<boolean>(false);
+    const [numCardsToShow, setNumCardsToShow] = useState(10); // Number of cards to initially show
+    const [isLoading, setIsLoading] = useState(false); // Add isLoading state
 
 
     const handleSearch = (query: any) => {
@@ -30,12 +33,29 @@ const EyesCatPage = ({ pageData }: any) => {
         return <div>Loading...</div>;
     }
 
+
     const currentDate = new Date();
     const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
 
+
+
+    const loadMoreCards = () => {
+        setIsLoading(true); // Set loading state to true when loading more cards
+        setTimeout(() => {
+            if (numCardsToShow + 4 >= pageData.secondaryCards.length) {
+                // If there are no more cards to load
+                setNumCardsToShow(pageData.secondaryCards.length);
+            } else {
+                // Load 4 more cards
+                setNumCardsToShow(numCardsToShow + 4);
+            }
+            setIsLoading(false); // Set loading state to false when done loading cards
+        }, 1000); // Simulating a loading delay (replace with actual card loading logic)
+    };
+
     return (
-        <main>
+        <main className=' overflow-hidden'>
             <Layout>
                 <section className=' '>
                     <form className="pt-32 pb-10 sm:pb-14">
@@ -75,19 +95,14 @@ const EyesCatPage = ({ pageData }: any) => {
                                         </div>
                                     </div>
                                 )}
-                                <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16'>
+                                <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
                                     {pageData.secondaryCards
                                         .filter((secCard: any) =>
                                             secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
                                         )
-                                        .length === 0 ? (
-                                        <p className="text-xl">Nothing found related to your search</p>
-                                    ) : (
-                                        pageData.secondaryCards
-                                            .filter((secCard: any) =>
-                                                secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
-                                            )
-                                            .map((secCard: any, secIdx: any) => (
+                                        .slice(0, numCardsToShow)
+                                        .map((secCard: any, secIdx: any) => (
+                                            <div className='flex gap-3 w-full'>
                                                 <div
                                                     className={`cursor-pointer rounded-md sm:max-w-[280px] min-w-[280px] `}
                                                     key={secIdx}
@@ -109,41 +124,49 @@ const EyesCatPage = ({ pageData }: any) => {
                                                     </h1>
                                                     <span className='text-sm pb-1 text-gray-500'>By {secCard.author} <span className='pl-2'> - </span> <span className='pl-2'> {formattedDate} </span></span>
                                                 </div>
-                                            )
-                                            ))}
+                                                {isLoading && secIdx === numCardsToShow - 1 && (
+                                                    <div className="min-w-[280px] movie--isloading mx-auto">
+                                                        <div className="loading-image"></div>
+                                                        <div className="loading-content">
+                                                            <div className="loading-text-container">
+                                                                <div className="loading-category"></div>
+                                                                <div className="loading-main-text"></div>
+                                                                <div className="loading-sub-text"></div>
+                                                                <div className='flex gap-2 items-center'>
+                                                                    <div className="loading-author-name"></div>
+                                                                    <div className='loading-qoma'></div>
+                                                                    <div className="loading-date"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        ))}
+                                    {pageData.secondaryCards
+                                        .filter((secCard: any) =>
+                                            secCard.heading.toLowerCase().includes(searchQuery.toLowerCase())
+                                        )
+                                        .length === 0 ? (
+                                        <p className="text-xl">Nothing found related to your search</p>
+                                    ) : null}
                                 </div>
                             </div>
-                            <span className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[110px] text-center justify-center mx-auto'>Load More</span>
+                            {numCardsToShow >= pageData.secondaryCards.length ? (
+                                <span
+                                    className='px-3 bg-black border-[1.5px] border-black bg-transparent  cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[130px] text-center justify-center mx-auto'>
+                                    No More Data
+                                </span>
+                            ) : (
+                                <span
+                                    onClick={loadMoreCards}
+                                    className='px-3 bg-black border-[1.5px] border-transparent hover:border-black hover:bg-transparent hover:text-black text-white cursor-pointer transition-all duration-300 py-2 rounded-md flex max-w-[130px] text-center justify-center mx-auto'>
+                                    Load More
+                                </span>
+                            )}
                         </div>
+
                     </div>
-                    {/* <div className="flex justify-center pb-10">
-                        <a href="#" className="flex items-center justify-center px-4 py-2 mx-1 text-gray-500 capitalize bg-white rounded-md cursor-not-allowed rtl:-scale-x-100 dark:bg-[#F9F2E8] ">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-
-                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
-                            1
-                        </a>
-
-                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
-                            2
-                        </a>
-
-                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
-                            ...
-                        </a>
-
-                        <a href="#" className="hidden px-4 py-2 mx-1 transition-colors duration-300 transform rounded-md sm:inline dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
-                            6
-                        </a>
-                        <a href="#" className="flex items-center justify-center px-4 py-2 mx-1 transition-colors duration-300 transform bg-white rounded-md rtl:-scale-x-100 dark:bg-[#F9F2E8]  hover:bg-tertiary dark:hover:bg-tertiary text-black">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                            </svg>
-                        </a>
-                    </div> */}
                 </section>
             </Layout>
         </main >

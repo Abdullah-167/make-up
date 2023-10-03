@@ -92,7 +92,9 @@ const Blog = () => {
                                                 const slug = generateSlug(newitem.heading);
                                                 return (
 
-                                                    <div className="border-[1.5px] border-tertiary bg-transparent hover:bg-tertiary transition-all duration-300 px-2 py-3 rounded-md hover:scale-105 relative" key={idx}>
+                                                    <div className="border-[1.5px] border-tertiary bg-transparent hover:bg-tertiary transition-all duration-300 px-2 py-3 rounded-md hover:scale-105 relative" key={idx}
+                                                        onMouseLeave={() => toggleIcons(null)}
+                                                    >
                                                         <div className="relative overflow-hidden lg:max-w-[500px]  rounded-md">
                                                             <Image className='transition-transform pb-3 hover:scale-105 duration-500 w-full rounded-md' src={newitem.mainImg} alt={'food'} width={500} height={500} />
                                                         </div>
@@ -132,7 +134,7 @@ const Blog = () => {
                                                                         <HiOutlineShare />
                                                                     </span>
                                                                 </div>
-                                                                <div className={`bg-white  px-2 py-2 rounded-md absolute  right-8 transition-all duration-500 ${activeIconsIdx === idx ? ' opacity-100 bottom-[70px]' : ' opacity-0 bottom-12'}`}>
+                                                                <div className={`bg-white  px-2 py-2 rounded-md absolute  right-8 transition-all duration-200 ${activeIconsIdx === idx ? ' opacity-100 bottom-[70px]' : ' opacity-0 bottom-12'}`}>
                                                                     {activeIconsIdx === idx && (
                                                                         <div>
                                                                             <p className="text-xs pb-1 block">Share On:</p>
