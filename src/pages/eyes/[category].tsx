@@ -101,7 +101,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                         )
                                         .slice(0, numCardsToShow)
                                         .map((secCard: any, secIdx: any) => (
-                                            <div className='flex gap-3 w-full'>
+                                            <div className='flex gap-3 w-full' key={secIdx}>
                                                 <div
                                                     className={`cursor-pointer rounded-md sm:max-w-[280px] min-w-[280px] `}
                                                     key={secIdx}
