@@ -22,7 +22,7 @@ const Home = () => {
             <Blog />
             {/* <Video /> */}
             <LifeHack />
-            <div className="max-w-[400px] movie--isloading mx-auto">
+            {/* <div className="max-w-[400px] movie--isloading mx-auto">
                 <div className="loading-image"></div>
                 <div className="loading-content">
                     <div className="loading-text-container">
@@ -36,7 +36,7 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <Instagram />
         </Layout>
     )
