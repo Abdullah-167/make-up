@@ -588,3 +588,8 @@ body {
     background-position: 140px;
   }
 }
+
+
+.main-grd {
+  background-image: linear-gradient(130deg, #FFBFBF 25%, #FFBFBF 100%);
+}

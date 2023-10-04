@@ -21,8 +21,8 @@ const PostDetail = () => {
 
     return (
         <section>
-            <div onMouseLeave={() => setActiveIconsIdx(false)}>
-                <div className='relative mt-[100px] max-h-[500px]'>
+            <div className='mb-14' onMouseLeave={() => setActiveIconsIdx(false)}>
+                <div className='relative max-h-[500px]'>
                     <Image className='max-h-[500px] object-cover w-full rounded-md my-2' src={'/women3.webp'} alt={''} width={1000} height={1000} />
                     <div className=' bg-black bg-opacity-70 absolute w-full h-full top-0'></div>
                 </div>
@@ -31,16 +31,16 @@ const PostDetail = () => {
                         <div className='flex justify-center items-center relative'>
                             <div>
                                 <h1 className='text-white text-3xl sm:text-5xl tracking-tighter font-semibold pb-4 leading-10'>How to clean the inside of a lip gloss tube</h1>
-                                <div className='text-white flex gap-5 items-center pb-14'>
+                                <div className='text-white flex gap-3 sm:gap-5 items-center pb-14'>
                                     <div className='text-white flex gap-2 items-center'>
-                                        <span className='text-xl'>  <TfiAlarmClock /> </span>
+                                        <span className='sm:text-xl'>  <TfiAlarmClock /> </span>
                                         <span>•</span>
-                                        <p className=' text-white'>5 Minutes Read</p>
+                                        <p className=' text-white text-sm sm:text-base'>5 Minutes Read</p>
                                     </div>
                                     -
                                     <div className='text-white flex gap-2 items-center'>
                                         <span><HiCalendarDays /></span>
-                                        <p className='text-lg pt-0.5'>{formattedDate}</p>
+                                        <p className='text-sm sm:text-base'>{formattedDate}</p>
                                     </div>
                                 </div>
                                 <div className='flex gap-20 items-center'>

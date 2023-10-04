@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import 'intersection-observer';
-
 import Button from '@/Components/Common/Button';
 import Container from '@/Components/Common/Layout/Container';
 import Image from 'next/image';
@@ -41,7 +39,6 @@ const OurTopic: React.FC<OurTopicProps> = () => {
     const [defaultImage, setDefaultImage] = useState<string>(data[0].img);
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    // Function to handle scroll event
     const handleScroll = () => {
         const section = sectionRef.current;
         const headings = section?.querySelectorAll('.heading-item');
