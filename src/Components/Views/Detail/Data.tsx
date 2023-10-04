@@ -1,4 +1,6 @@
+import Container from '@/Components/Common/Layout/Container';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 
@@ -81,64 +83,124 @@ const Data = () => {
         }
     };
 
+
+    const currentDate = new Date();
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate: string = currentDate.toLocaleDateString(undefined, options);
+
     return (
         <section>
-            <div className='flex gap-2'>
-                <div className='relative'>
-                    <div className='px-3 pt-4 pb-7 min-w-[200px] max-w-[200px] sticky top-10'>
-                        {/* Table of content */}
-                        <h2 className='font-semibold pl-4 pb-4'>Table Of Content</h2>
-                        <ul>
+            <Container>
+                <div className='flex gap-2 justify-between pb-10'>
+                    <div className='flex gap-2'>
+                        <div className='relative'>
+                            <div className='pl-1 pt-4 pb-7 min-w-[200px] max-w-[200px] sticky top-10'>
+                                {/* Table of content */}
+                                <h2 className='font-semibold pl-4 pb-4'>Table Of Content</h2>
+                                <ul>
+                                    {data.map((item, index) => {
+                                        if (item.isHeading) {
+                                            const id = item.heading.replace(/\s+/g, '-').toLowerCase();
+                                            return (
+                                                <p
+                                                    className={`pb-4 cursor-pointer ${activeHeading === item.heading ? 'text-black' : 'text-gray-400'
+                                                        }`}
+                                                    onClick={() => smoothScrollTo(id)}
+                                                    key={index}
+                                                >
+                                                    {item.heading}
+                                                </p>
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='max-w-[800px]'>
                             {data.map((item, index) => {
-                                if (item.isHeading) {
-                                    const id = item.heading.replace(/\s+/g, '-').toLowerCase();
-                                    return (
-                                        <p
-                                            className={`pb-4 cursor-pointer ${activeHeading === item.heading ? 'text-black' : 'text-gray-400'
-                                                }`}
-                                            onClick={() => smoothScrollTo(id)}
-                                            key={index}
-                                        >
-                                            {item.heading}
-                                        </p>
-                                    );
-                                }
-                                return null;
+                                return (
+                                    <div className='pb-20' key={index}>
+                                        {item.isHeading && (
+                                            <h2
+                                                className='pb-3 text-3xl'
+                                                id={item.heading.replace(/\s+/g, '-').toLowerCase()}
+                                            >
+                                                <strong>{item.heading}</strong>
+                                            </h2>
+                                        )}
+                                        <p className='text-xl leading-9 pb-5'>{item.para}</p>
+                                        {item.isImage && (
+                                            <Image
+                                                className='w-full'
+                                                src={item.img || ''}
+                                                alt='blog-post-image'
+                                                width={700}
+                                                height={700}
+                                            />
+                                        )}
+                                    </div>
+                                );
                             })}
-                        </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className=' text-xl font-semibold text-center pb-8'>Relevant Posts</h3>
+                        {relevantPost.map((item, index) => {
+                            return (
+                                <div
+                                    className={`cursor-pointer rounded-md mx-2 pb-6`}
+                                    key={index}
+                                >
+                                    <div className={`overflow-hidden pb-2 `}>
+                                        <Image
+                                            className={`rounded-md transition-all duration-500  max-h-[300px]  md:max-w-[300px] hover:scale-105 w-full h-full object-cover`}
+                                            src={item.img}
+                                            alt={'lifehack-img'}
+                                            width={500}
+                                            height={500}
+                                        />
+                                    </div>
+                                    <Link href={'/'}>
+                                        <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D] block'>{item.category}</span>
+                                    </Link>
+                                    <h1 className="text-xl pb-2">
+                                        {item.heading}
+                                    </h1>
+                                    <span className='text-sm pb-1 text-gray-500'>By {item.author} <span className='pl-2'> - </span> <span className='pl-2'> {formattedDate} </span></span>
+                                </div>
+
+                            )
+                        })}
                     </div>
                 </div>
-                <div className='max-w-[800px]'>
-                    {data.map((item, index) => {
-                        return (
-                            <div className='pb-20' key={index}>
-                                {item.isHeading && (
-                                    <h2
-                                        className='pb-3 text-3xl'
-                                        id={item.heading.replace(/\s+/g, '-').toLowerCase()}
-                                    >
-                                        <strong>{item.heading}</strong>
-                                    </h2>
-                                )}
-                                <p className='text-xl leading-9 pb-5'>{item.para}</p>
-                                {item.isImage && (
-                                    <Image
-                                        className='w-full'
-                                        src={item.img || ''}
-                                        alt='blog-post-image'
-                                        width={700}
-                                        height={700}
-                                    />
-                                )}
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
+            </Container>
         </section>
     );
 };
 
 export default Data;
+
+
+const relevantPost = [
+    {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+    },
+    {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+    },
+    {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+    },
+]
 
 
