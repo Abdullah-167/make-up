@@ -91,12 +91,12 @@ const Data = () => {
     return (
         <section>
             <Container>
-                <div className='flex gap-2 justify-between pb-10'>
-                    <div className='flex gap-2'>
+                <div className='flex gap-5 justify-between pb-10'>
+                    <div className='flex gap-5'>
                         <div className='relative'>
-                            <div className='pl-1 pt-4 pb-7 min-w-[200px] max-w-[200px] sticky top-10'>
+                            <div className='pl-1 pt-4 pb-7 min-w-[160px] max-w-[200px] sticky top-10'>
                                 {/* Table of content */}
-                                <h2 className='font-semibold pl-4 pb-4'>Table Of Content</h2>
+                                <h2 className='font-semibold pl-1 pb-4'>Table Of Content</h2>
                                 <ul>
                                     {data.map((item, index) => {
                                         if (item.isHeading) {
@@ -117,7 +117,7 @@ const Data = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className='max-w-[800px]'>
+                        <div className='max-w-[900px]'>
                             {data.map((item, index) => {
                                 return (
                                     <div className='pb-20' key={index}>
@@ -144,7 +144,7 @@ const Data = () => {
                             })}
                         </div>
                     </div>
-                    <div>
+                    <div className='max-w-[250px]'>
                         <h3 className=' text-xl font-semibold text-center pb-8'>Relevant Posts</h3>
                         {relevantPost.map((item, index) => {
                             return (

@@ -9,7 +9,7 @@ const Layout = ({ children }: any) => {
     return (
         <section className=''>
             <Navbar />
-            <ProgressBar />
+            {/* <ProgressBar /> */}
             {children}
             <NewsLetter />
             <Footer />

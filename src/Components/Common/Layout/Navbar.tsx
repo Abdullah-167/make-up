@@ -64,148 +64,149 @@ const Navbar: React.FC = () => {
 
     return (
         <nav>
-            <div className={`z-[1000] py-5 w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : 'fixed '} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>                <div className=' relative'>
-                <Container>
-                    <div className='flex items-center justify-between z-[1000] '>
-                        <div className=''>
-                            <Link href={'/'}>
-                                <Image
-                                    src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
-                                    alt={'logo'}
-                                    width={120}
-                                    height={120}
-                                    className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
-                                />
-                            </Link>
-                        </div>
-                        <ul className="flex gap-4 nav-links">
-                            {links.map((link, index) => (
-                                <li
-                                    key={index}
-                                    className={` relative group ${scrollDown ? 'links-two' : 'links'}`}
-                                    onMouseLeave={() => {
-                                        setActiveDropdown(null);
-                                        if (link.mainLink === 'Foundation') {
-                                            setIsFoundationHovered(false);
-                                        }
-                                    }}
-                                >
-                                    <span
-                                        onMouseOver={() => {
-                                            setActiveDropdown(index);
+            <div className={`py-5 w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : ''} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>
+                <div className=' relative'>
+                    <Container>
+                        <div className='flex items-center justify-between z-[1000] '>
+                            <div className=''>
+                                <Link href={'/'}>
+                                    <Image
+                                        src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
+                                        alt={'logo'}
+                                        width={120}
+                                        height={120}
+                                        className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
+                                    />
+                                </Link>
+                            </div>
+                            <ul className="flex gap-4 nav-links z-[1000]">
+                                {links.map((link, index) => (
+                                    <li
+                                        key={index}
+                                        className={` relative group ${scrollDown ? 'links-two' : 'links'}`}
+                                        onMouseLeave={() => {
+                                            setActiveDropdown(null);
                                             if (link.mainLink === 'Foundation') {
-                                                setIsFoundationHovered(true);
+                                                setIsFoundationHovered(false);
                                             }
                                         }}
-                                        className={`text-[#000000] text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
                                     >
-                                        {link.mainLink}
-                                        {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (
-                                            <IoIosArrowUp
-                                                className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
-                                            />
-                                        )}
-                                    </span>
-                                    <div className={` transition-all  duration-500  ${activeDropdown === index ? 'dropdown--show' : 'dropdown--hide'
-                                        }`}>
-                                        {link.innerLink && activeDropdown === index && (
-                                            <ul
-                                                className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Makeup Tutorials'
-                                                    ? '-left-6 w-44 pl-4 py-3 dropdown--expanded'
-                                                    : ''
-                                                    }`}
-                                            >
-                                                {link.innerLink.map((item, innerIndex) => (
-                                                    <div className={` mb-2 ${scrollDown ? 'links-two' : 'links'}`} key={innerIndex}>
-                                                        <Link href={(item as { url: string }).url}>
-                                                            <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                {item.link}
-                                                            </span>
-                                                        </Link>
+                                        <span
+                                            onMouseOver={() => {
+                                                setActiveDropdown(index);
+                                                if (link.mainLink === 'Foundation') {
+                                                    setIsFoundationHovered(true);
+                                                }
+                                            }}
+                                            className={`text-[#000000] text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                        >
+                                            {link.mainLink}
+                                            {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (
+                                                <IoIosArrowUp
+                                                    className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
+                                                />
+                                            )}
+                                        </span>
+                                        <div className={` transition-all  duration-500  ${activeDropdown === index ? 'dropdown--show' : 'dropdown--hide'
+                                            }`}>
+                                            {link.innerLink && activeDropdown === index && (
+                                                <ul
+                                                    className={`absolute z-[1000] text-sm shadow ${scrollDown ? ' bg-tertiary' : 'bg-white '} ${link.mainLink === 'Makeup Tutorials'
+                                                        ? '-left-6 w-44 pl-4 py-3 dropdown--expanded'
+                                                        : ''
+                                                        }`}
+                                                >
+                                                    {link.innerLink.map((item, innerIndex) => (
+                                                        <div className={` mb-2 ${scrollDown ? 'links-two' : 'links'}`} key={innerIndex}>
+                                                            <Link href={(item as { url: string }).url}>
+                                                                <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                    {item.link}
+                                                                </span>
+                                                            </Link>
+                                                        </div>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                            {link.makeUp && (
+                                                <ul
+                                                    className={`mega-menu z-[2000] text-sm shadow w-[900px] pb-3 pt-8 px-5 ${scrollDown ? 'bg-tertiary' : 'bg-white'
+                                                        }`}
+                                                    style={{
+                                                        background: `linear-gradient(to bottom, transparent 30px,)`,
+                                                    }}
+                                                >
+                                                    <div className=' flex justify-evenly'>
+                                                        {link.innerMakeUp?.map((item, idx) => {
+                                                            return (
+                                                                <div className=''
+                                                                    key={idx}>
+                                                                    <Link href={item.url}> <span className=' font-semibold text-[17px]'>{item.heading}</span> </Link>
+                                                                    <div className='pt-3'></div>
+                                                                    {item.lipsInner.map((newitem, newIdx) => {
+                                                                        return (
+                                                                            <Link href={newitem.url} key={newIdx}>
+                                                                                <div className={` mb-2`}>
+                                                                                    <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
+                                                                                        {newitem.link}
+                                                                                    </span>
+                                                                                </div>
+                                                                            </Link>
+                                                                        )
+                                                                    })}
+                                                                </div>
+                                                            )
+                                                        })}
                                                     </div>
-                                                ))}
-                                            </ul>
-                                        )}
-                                        {link.makeUp && (
-                                            <ul
-                                                className={`mega-menu z-[2000] text-sm shadow w-[900px] pb-3 pt-8 px-5 ${scrollDown ? 'bg-tertiary' : 'bg-white'
-                                                    }`}
-                                                style={{
-                                                    background: `linear-gradient(to bottom, transparent 30px,)`,
-                                                }}
-                                            >
-                                                <div className=' flex justify-evenly'>
-                                                    {link.innerMakeUp?.map((item, idx) => {
-                                                        return (
-                                                            <div className=''
-                                                                key={idx}>
-                                                                <Link href={item.url}> <span className=' font-semibold text-[17px]'>{item.heading}</span> </Link>
-                                                                <div className='pt-3'></div>
-                                                                {item.lipsInner.map((newitem, newIdx) => {
-                                                                    return (
-                                                                        <Link href={newitem.url} key={newIdx}>
-                                                                            <div className={` mb-2`}>
-                                                                                <span className={`cursor-pointer pb-1.5 transition-all duration-500 ${scrollDown ? '' : 'hover:text-[#D48D78] '}`}>
-                                                                                    {newitem.link}
-                                                                                </span>
-                                                                            </div>
-                                                                        </Link>
-                                                                    )
-                                                                })}
-                                                            </div>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </ul>
-                                        )}
-                                    </div>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className={`res-hamburger text-black cursor-pointer ${toggelTab ? 'text-3xl' : 'text-4xl'}`}
-                            onClick={() => handleMenu()}
-                        >
-                            {toggelTab ? (
-                                <RxCross1 />
-                            ) :
-                                <CgMenuLeft />
+                                                </ul>
+                                            )}
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className={`res-hamburger text-black cursor-pointer ${toggelTab ? 'text-3xl' : 'text-4xl'}`}
+                                onClick={() => handleMenu()}
+                            >
+                                {toggelTab ? (
+                                    <RxCross1 />
+                                ) :
+                                    <CgMenuLeft />
 
-                            }
-                        </div>
-                    </div>
-                </Container>
-                <div className={` w-full z-[2000] fixed top-[85px] py-5 h-full transition-all duration-700 shadow-md  right-0 max-w-[300px] ${toggelTab ? ' right-0 block z-[400]' : '  translate-x-[600px]  h-0'} ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
-                    {toggelTab && (
-                        <ul className="flex flex-col space-x-7">
-                            {resMenu.map((item: any, index: any) => (
-                                <div key={index} className={`mb- pb-2 px-2 `}>
-                                    <div
-                                        className='flex justify-between items-center cursor-pointer transition-all duration-500 pb-2'
-                                        onClick={() => toggleMenu(item.id)}
-                                    >
-                                        <h3 className='font-semibold'>{item.heading}</h3>
-                                        <span className={`text-xl transition-all duration-300 ${resNav === item.id ? ' rotate-180' : ''}`}><IoMdArrowDropdown /></span>
-
-                                    </div>
-                                    <div
-                                        className={`overflow-hidden transition-all duration-500 ${resNav === item.id ? 'max-h-[300px]' : 'max-h-0'
-                                            }`}
-                                    >
-                                        {item.category.map((innerCat: any, idx: any) => (
-                                            <Link href={innerCat.url} key={idx}> <p className='text-sm pb-2 cursor-pointer'>{innerCat.catOne}</p> </Link>
-                                        ))}
-                                    </div>
-                                </div>
-                            ))}
-                            <div>
-                                <Link href={'/buying-guide'}> <p className='font-semibold pb-4 px-2'>Buying Guide</p> </Link>
-                                <Link href={'/blogs'}> <p className='font-semibold pb-4 px-2'>Blogs</p> </Link>
-                                <Link href={'/about-us'}> <p className='font-semibold pb-4 px-2'>About Us</p> </Link>
+                                }
                             </div>
-                        </ul>
-                    )}
+                        </div>
+                    </Container>
+                    <div className={` w-full z-[2000] fixed top-[85px] py-5 h-full transition-all duration-700 shadow-md  right-0 max-w-[300px] ${toggelTab ? ' right-0 block z-[400]' : '  translate-x-[600px]  h-0'} ${scrollDown ? 'bg-tertiary text-[#000000] shadow-md bg-opacity-90' : 'bg-white'}`}>
+                        {toggelTab && (
+                            <ul className="flex flex-col space-x-7">
+                                {resMenu.map((item: any, index: any) => (
+                                    <div key={index} className={`mb- pb-2 px-2 `}>
+                                        <div
+                                            className='flex justify-between items-center cursor-pointer transition-all duration-500 pb-2'
+                                            onClick={() => toggleMenu(item.id)}
+                                        >
+                                            <h3 className='font-semibold'>{item.heading}</h3>
+                                            <span className={`text-xl transition-all duration-300 ${resNav === item.id ? ' rotate-180' : ''}`}><IoMdArrowDropdown /></span>
+
+                                        </div>
+                                        <div
+                                            className={`overflow-hidden transition-all duration-500 ${resNav === item.id ? 'max-h-[300px]' : 'max-h-0'
+                                                }`}
+                                        >
+                                            {item.category.map((innerCat: any, idx: any) => (
+                                                <Link href={innerCat.url} key={idx}> <p className='text-sm pb-2 cursor-pointer'>{innerCat.catOne}</p> </Link>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                                <div>
+                                    <Link href={'/buying-guide'}> <p className='font-semibold pb-4 px-2'>Buying Guide</p> </Link>
+                                    <Link href={'/blogs'}> <p className='font-semibold pb-4 px-2'>Blogs</p> </Link>
+                                    <Link href={'/about-us'}> <p className='font-semibold pb-4 px-2'>About Us</p> </Link>
+                                </div>
+                            </ul>
+                        )}
+                    </div>
                 </div>
-            </div>
             </div>
         </nav >
     );
