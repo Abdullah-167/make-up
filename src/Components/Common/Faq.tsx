@@ -10,14 +10,15 @@ const FaqSection = ({ faqData }: any) => {
     };
 
     return (
-        <div className="max-w-2xl mx-auto mt-8">
+        <div className="max-w-2xl mx-auto ">
+            <h1 className='text-3xl font-semibold  text-center pb-10'>Frequently <span className='text-tertiary'> Asked Questions </span> </h1>
             {faqData.map((item: any, index: any) => (
                 <div key={index} className={`mb-4 border-b-[1.5px] border-b-gray-200 pb-2 ${index === 0 ? 'border-t-[1.5px] border-t-gray-200 pt-3' : ''}`}>
                     <div
-                        className="flex justify-between items-center cursor-pointer transition-all duration-500 pb-4"
+                        className="flex justify-between items-center cursor-pointer transition-all duration-500 sm:pb-4"
                         onClick={() => toggleFaq(index)}
                     >
-                        <h3 className="text-2xl font-medium">{item.question}</h3>
+                        <h3 className="text-lg sm:text-2xl font-medium">{item.question}</h3>
                         {isOpen === index  ?  (
                             <span className='text-xl'>-</span>
                         ) :
@@ -30,7 +31,7 @@ const FaqSection = ({ faqData }: any) => {
                         className={`overflow-hidden transition-all duration-500 ${isOpen === index ? 'max-h-[300px]' : 'max-h-0'
                             }`}
                     >
-                        <p className={`text-lg mt-2 text-gray-600 transition-all duration-500 ${isOpen === index ? ' opacity-100' : ' opacity-0'}`}>{item.answer}</p>
+                        <p className={`sm:text-lg mt-2 text-gray-600 transition-all duration-500 ${isOpen === index ? ' opacity-100' : ' opacity-0'}`}>{item.answer}</p>
                     </div>
                 </div>
             ))}

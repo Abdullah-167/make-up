@@ -1,3 +1,4 @@
+import FaqSection from '@/Components/Common/Faq';
 import Container from '@/Components/Common/Layout/Container';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -92,8 +93,8 @@ const Data = () => {
         <section>
             <Container>
                 <div className='flex gap-5 justify-between pb-10'>
-                    <div className='flex gap-5'>
-                        <div className='relative'>
+                    <div className='md:flex gap-5'>
+                        <div className='md:block hidden relative'>
                             <div className='pl-1 pt-4 pb-7 min-w-[160px] max-w-[200px] sticky top-10'>
                                 {/* Table of content */}
                                 <h2 className='font-semibold pl-1 pb-4'>Table Of Content</h2>
@@ -119,17 +120,18 @@ const Data = () => {
                         </div>
                         <div className='max-w-[900px]'>
                             {data.map((item, index) => {
+                                const isLastItem = index === data.length - 1;
                                 return (
-                                    <div className='pb-20' key={index}>
+                                    <div className={` ${isLastItem ? 'md:pb-20' : 'pb-10 md:pb-20'}`} key={index}>
                                         {item.isHeading && (
                                             <h2
-                                                className='pb-3 text-3xl'
+                                                className='pb-6 sm:pb-3 text-3xl'
                                                 id={item.heading.replace(/\s+/g, '-').toLowerCase()}
                                             >
                                                 <strong>{item.heading}</strong>
                                             </h2>
                                         )}
-                                        <p className='text-xl leading-9 pb-5'>{item.para}</p>
+                                        <p className='text-xl leading-9 pb-5 mont'>{item.para}</p>
                                         {item.isImage && (
                                             <Image
                                                 className='w-full'
@@ -142,9 +144,12 @@ const Data = () => {
                                     </div>
                                 );
                             })}
+                            <div className='pr-5 pt-10 md:pt-0'>
+                                <FaqSection faqData={faqData} />
+                            </div>
                         </div>
                     </div>
-                    <div className='max-w-[250px]'>
+                    <div className='lg:block hidden max-w-[250px]'>
                         <h3 className=' text-xl font-semibold text-center pb-8'>Relevant Posts</h3>
                         {relevantPost.map((item, index) => {
                             return (
@@ -204,3 +209,24 @@ const relevantPost = [
 ]
 
 
+
+
+
+const faqData = [
+    {
+        question: 'Why is it important to clean the inside of a lip gloss tube?',
+        answer: 'Cleaning the inside of a lip gloss tube is crucial to maintain hygiene and prevent the growth of bacteria and mold. It also ensures that your lip gloss remains fresh and safe to use.'
+    },
+    {
+        question: 'How often should I clean the inside of my lip gloss tube?',
+        answer: 'You should aim to clean the inside of your lip gloss tube every 2-4 weeks, depending on how frequently you use it. Regular cleaning helps prevent contamination and extends the shelf life of your lip gloss.'
+    },
+    {
+        question: 'What materials do I need to clean the inside of a lip gloss tube?',
+        answer: `To clean the inside of a lip gloss tube, you'll need cotton swabs, rubbing alcohol (isopropyl alcohol), mild soap, warm water, and paper towels. These materials are readily available and effective for cleaning.`
+    },
+    {
+        question: ' How do I clean the wand or applicator of my lip gloss?',
+        answer: `To clean the wand or applicator, soak it in a small container with rubbing alcohol for a few minutes. Afterward, wipe it with a clean cotton swab or paper towel. Make sure it's completely dry before reinserting it into the lip gloss tube.`
+    },
+]

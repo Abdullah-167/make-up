@@ -64,18 +64,18 @@ const Navbar: React.FC = () => {
 
     return (
         <nav>
-            <div className={`py-5 w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : ''} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>
+            <div className={`py-5 z-[20000] w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : ''} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>
                 <div className=' relative'>
                     <Container>
                         <div className='flex items-center justify-between z-[1000] '>
-                            <div className=''>
-                                <Link href={'/'}>
+                            <div className='z-[1000]'>
+                                <Link  href={'/'}>
                                     <Image
                                         src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
                                         alt={'logo'}
                                         width={120}
                                         height={120}
-                                        className={` transition-all duration-500 ${scrollDown ? ' shadow-lg' : ''}`}
+                                        className={` transition-all duration-500 z-[2000] ${scrollDown ? ' shadow-lg' : ''}`}
                                     />
                                 </Link>
                             </div>
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <div className={`res-hamburger text-black cursor-pointer ${toggelTab ? 'text-3xl' : 'text-4xl'}`}
+                            <div className={`z-[1000] res-hamburger text-black cursor-pointer ${toggelTab ? 'text-3xl' : 'text-4xl'}`}
                                 onClick={() => handleMenu()}
                             >
                                 {toggelTab ? (

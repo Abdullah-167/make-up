@@ -15,7 +15,7 @@ const Instagram = () => {
             <Container>
                 <div className='pb-20'>
                     <div className='flex justify-between items-center'>
-                        <span className='text-[42px] text-center sm:text-left'>
+                        <span className='text-3xl md:text-[42px] text-center sm:text-left'>
                             Visit Our <span className=' text-tertiary'> Pins </span>
                         </span>
                         <div className="relative cursor-pointer inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden  text-[#D48D78] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 group">
@@ -29,7 +29,7 @@ const Instagram = () => {
                             <span className="relative w-full text-left transition-colors duration-500 ease-in-out group-hover:text-tertiary">Pinterest</span>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-0 gap-5 pt-10 px-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 sm:gap-0 gap-5 pt-10 sm:px-5">
                         {images.map((item, index) => {
                             return (
                                 <div
