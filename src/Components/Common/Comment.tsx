@@ -3,6 +3,8 @@ import { AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import Image from 'next/image';
 import Container from './Layout/Container';
 import { HiCalendarDays } from 'react-icons/hi2';
+import { BsTrash } from 'react-icons/bs';
+import { FaEdit } from 'react-icons/fa';
 
 interface Comment {
     name: string;
@@ -151,6 +153,7 @@ const Comment = () => {
                 <div className='max-w-[970px] pl-[180px]'>
                     <div>
                         <p className='text-3xl  pb-2'>Leave a <span className='text-tertiary'>Comment</span> </p>
+                        <p className='text-sm pb-4 max-w-[450px]'>We value your <span className=' text-tertiary'> opinion! </span> Please share your thoughts and the experiences you've gained after reading this article below:</p>
                         <div className='flex gap-2 items-center'>
                             <span>
                                 Article   Rating
@@ -246,18 +249,18 @@ const Comment = () => {
 
                                         <div className='pb-4'>
                                             {comment.email === userEmail && (
-                                                <div>
+                                                <div className='flex'>
                                                     <button
-                                                        className="bg-[#2F2F2F] text-white py-2 px-4 text-sm rounded focus:outline-none focus:shadow-outline uppercase"
+                                                        className="bg-green-500 text-white py-2 px-2 text-sm rounded-full flex justify-center  focus:outline-none focus:shadow-outline uppercase"
                                                         onClick={() => handleEditComment(commentIndex)}
                                                     >
-                                                        Edit
+                                                        <FaEdit />
                                                     </button>
                                                     <button
-                                                        className="bg-red-500 text-white py-2 px-4 text-sm rounded focus:outline-none focus:shadow-outline uppercase ml-2"
+                                                        className="bg-red-500 text-white py-2 px-2 text-sm rounded-full flex justify-center  focus:outline-none focus:shadow-outline uppercase ml-2"
                                                         onClick={() => handleDeleteComment(commentIndex)}
                                                     >
-                                                        Delete
+                                                        <BsTrash />
                                                     </button>
                                                 </div>
                                             )}
