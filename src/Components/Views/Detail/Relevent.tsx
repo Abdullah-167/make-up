@@ -62,7 +62,7 @@ const Relevant = () => {
                                 </div>
 
                                 <div className="absolute bottom-10 px-5 z-[1000]">
-                                    <p className="font-medium text-2xl sm:text-3xl pb-2 text-white">{item.heading}</p>
+                                    <p className="font-medium text-lg sm:text-3xl pb-2 text-white">{item.heading}</p>
                                     <div className=" flex gap-2 flex-wrap items-center text-ellipsis">
                                         <Button
                                             btnText={item.readNow}

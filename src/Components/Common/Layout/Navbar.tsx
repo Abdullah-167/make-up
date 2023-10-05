@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav>
-            <div className={`py-5 z-[20000] w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : ''} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>
+            <div className={`py-5 z-[20000] w-full transition-all duration-500 ${isBlogPage ? 'bg-white' : 'fixed'} ${scrollDown ? 'bg-tertiary text-[#000000] bg-opacity-90' : 'bg-white'}`}>
                 <div className=' relative'>
                     <Container>
                         <div className='flex items-center justify-between z-[1000] '>

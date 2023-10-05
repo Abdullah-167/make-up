@@ -61,8 +61,8 @@ const LatestBlog = () => {
                                         width={700}
                                         height={500}
                                     />
-                                    <div className="effect bg-[#F8F0E5] absolute top-0 w-2 h-full blur-md z-[100]"></div>
-                                    <div className="effect bg-[#F8F0E5] absolute top-0 left-4 w-2 h-full blur-md z-[100]"></div>
+                                    <div className="effect bg-white absolute top-0 w-2 h-full blur z-[100]"></div>
+                                    <div className="effect bg-white absolute top-0 left-4 w-2 h-full blur z-[100]"></div>
                                 </div>
 
                                 <div className="absolute bottom-9 px-5 z-[1000]">

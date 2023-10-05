@@ -12,7 +12,7 @@ const Hero = () => {
                     <div className='flex flex-wrap md:flex-nowrap justify-between items-center pb-10 sm:pb-20 pt-32'>
                         <div className=''>
                             <h1 className='text-3xl sm:text-6xl font-semibold max-w-[500px] sm:leading-[60px] pb-5'>About Us</h1>
-                            <h2 className=' max-w-[450px] pb-5 leading-6'>{`We're dedicated to sharing our expertise and passion for makeup with you. Our goal is to be your go-to source for all things makeup, offering a range of products and resources . Join us on this beauty journey and unlock your full potential in the world of makeup.`}</h2>
+                            <h2 className=' max-w-[550px] pb-5 leading-6'>{`We're dedicated to sharing our expertise and passion for makeup with you. Our goal is to be your go-to source for all things makeup, offering a range of products and resources . Join us on this beauty journey and unlock your full potential in the world of makeup.`}</h2>
                             <Button
                                 btnText={`Let's Explore`}
                                 borderRadius={'10px'}
