@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
         <section className='px-5'>
             <div className="max-w-[800px] mx-auto bg-white p-6 rounded-md shadow-md my-10">
                 <h2 className="text-3xl text-center font-semibold mb-4 text-tertiary lora">Contact Us</h2>
-                <p className=' text-center pb-4'>  Have you encountered any problems or issues with our content? Do you have any copyright concerns? Please don't hesitate to contact us.</p>
+                <p className=' text-center pb-4'>  {`Have you encountered any problems or issues with our content? Do you have any copyright concerns? Please don't hesitate to contact us.`}</p>
                 {formSubmitted ? (
                     <div className="bg-tertiary bg-opacity-50 rounded-md p-6">
                         <div className="mb-4">
