@@ -3,6 +3,8 @@ export const foundationCatData = [
         url: 'liquid-foundation',
         mainHeading: 'Latest Liquid Foundation Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
+        seoTitle: 'Liquid Foundation',
+        seoDescritipn: `Evoc Beauty's Liquid Foundation Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -78,6 +80,8 @@ export const foundationCatData = [
         url: 'serum-foundation',
         mainHeading: 'Featured Serum Foundation Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
+        seoTitle: 'Serum Foundation',
+        seoDescritipn: `Evoc Beauty's Serum Foundation Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -153,6 +157,8 @@ export const foundationCatData = [
         url: 'cream-foundation',
         mainHeading: 'Featured Cream Foundation Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
+        seoTitle: 'Cream Foundation',
+        seoDescritipn: `Evoc Beauty's Cream Foundation Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -228,6 +234,8 @@ export const foundationCatData = [
         url: 'stick-foundation',
         mainHeading: 'Featured Stick Foundation Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
+        seoTitle: 'Stick Foundation',
+        seoDescritipn: `Evoc Beauty's Stick Foundation Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -303,6 +311,8 @@ export const foundationCatData = [
         url: 'powder-foundation',
         mainHeading: 'Featured Powder Foundation Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
+        seoTitle: 'Powder Foundation',
+        seoDescritipn: `Evoc Beauty's Powder Foundation Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',

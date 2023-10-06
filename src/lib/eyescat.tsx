@@ -3,6 +3,8 @@ export const eyesCatData = [
         url: 'eyeliner',
         mainHeading: 'Latest Eyeliner Articles',
         catHeading: 'Enjoy Our Top Notch Articles',
+        seoTitle: 'Eyeliner',
+        seoDescritipn: `Evoc Beauty's Eylener Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -78,6 +80,8 @@ export const eyesCatData = [
         url: 'mascara',
         mainHeading: 'Featured Mascara Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
+        seoTitle: 'Mascara',
+        seoDescritipn: `Evoc Beauty's Mascara Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -153,6 +157,8 @@ export const eyesCatData = [
         url: 'kajal',
         mainHeading: 'Featured Kajal Blogs',
         catHeading: 'Top Choosen Categories For Foundation',
+        seoTitle: 'Kajal',
+        seoDescritipn: `Evoc Beauty's Kajal Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -228,6 +234,8 @@ export const eyesCatData = [
         url: 'eye-Shadow',
         mainHeading: 'Featured Eye Shadow Blogs',
         catHeading: 'Top Choosen Categories For Skin Care',
+        seoTitle: 'Eye Shadow',
+        seoDescritipn: `Evoc Beauty's Eye Shadow Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -303,6 +311,8 @@ export const eyesCatData = [
         url: 'eye-primers',
         mainHeading: 'Featured Eye Primers Blogs',
         catHeading: 'Top Choosen Categories For Nail Care',
+        seoTitle: 'Eye Primers',
+        seoDescritipn: `Evoc Beauty's Eye Primers Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -378,6 +388,8 @@ export const eyesCatData = [
         url: 'eyelash-extensions',
         mainHeading: 'Featured Eyelash Extensions Blogs',
         catHeading: 'Who Are You And Why Are you',
+        seoTitle: 'Eyelash Extensions',
+        seoDescritipn: `Evoc Beauty's Eyelash Extensions Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -453,6 +465,8 @@ export const eyesCatData = [
         url: 'eye-glitter',
         mainHeading: 'Featured Eye Glitter Blogs',
         catHeading: 'Who Are You And Why Are you',
+        seoTitle: 'Eye Glitter',
+        seoDescritipn: `Evoc Beauty's Eye Glitter Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',
@@ -528,6 +542,8 @@ export const eyesCatData = [
         url: 'eye-concealer',
         mainHeading: 'Featured Eye Eoncealer Blogs',
         catHeading: 'Who Are You And Why Are you',
+        seoTitle: 'Eye Concealer',
+        seoDescritipn: `Evoc Beauty's Eye Concealer Detail Page`,
         mainCards: [
             {
                 img: '/imgfour.png',

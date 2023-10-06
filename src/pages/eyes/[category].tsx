@@ -6,6 +6,7 @@ import Layout from '@/Components/Common/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Seo from '@/Components/Common/Seo';
 
 
 const EyesCatPage = ({ pageData }: any) => {
@@ -94,6 +95,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                         </div> */}
                                     </div>
                                 )}
+                                <Seo title={pageData.seoTitle} descritipn={pageData.seoDescritipn} />
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
                                     {pageData.secondaryCards
                                         .filter((secCard: any) =>
