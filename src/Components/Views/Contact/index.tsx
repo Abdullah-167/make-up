@@ -11,7 +11,7 @@ const Contact = () => {
         <Layout>
             <Hero />
             <Form />
-            <LatestBlog />
+            {/* <LatestBlog /> */}
             <Instagram />
         </Layout>
     )
