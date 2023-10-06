@@ -86,12 +86,12 @@ const EyesCatPage = ({ pageData }: any) => {
                             <div key={pageData.url}>
                                 {!searchQuery && (
                                     <div>
-                                        <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
-                                        <div className='flex gap-2 items-center justify-center pb-9'>
+                                        <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-14'>{pageData.mainHeading}</p>
+                                        {/* <div className='flex gap-2 items-center justify-center pb-9'>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
                                             <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 )}
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
@@ -116,7 +116,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                                         />
                                                     </div>
                                                     <Link href={'/'}>
-                                                        <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D] block'>{secCard.category}</span>
+                                                        <span className='text-sm pb-1 text-tertiary hover:text-[#35155D] block'>{secCard.category}</span>
                                                     </Link>
                                                     <h1 className="text-xl pb-2">
                                                         {secCard.heading}

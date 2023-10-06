@@ -150,6 +150,156 @@ export const blogData = [
     ]
   },
   {
+    url: 'makeup-eraser',
+    mainHeading: 'Featured Makeup Eraser Blogs',
+    catHeading: 'Top Choosen Categories For Eyes',
+    mainCards: [
+      {
+        img: '/imgfour.png',
+        cat: 'Eyeliner',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/beautifullgirl.jpg',
+        cat: 'Mascara',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/phithree.webp',
+        cat: 'Kajal',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/womenmakeup.webp',
+        cat: 'Eye Shadow',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/women3.webp',
+        cat: 'Eye Concealer',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/style.jpg',
+        cat: 'Eyelash Extensions',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+    ],
+    secondaryCards: [
+      {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/style.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/imgfour.png',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/womenmakeup.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/phithree.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+    ]
+  },
+  {
+    url: 'buying-guide',
+    mainHeading: 'Featured Makeup Eraser Blogs',
+    catHeading: 'Top Choosen Categories For Eyes',
+    mainCards: [
+      {
+        img: '/imgfour.png',
+        cat: 'Eyeliner',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/beautifullgirl.jpg',
+        cat: 'Mascara',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/phithree.webp',
+        cat: 'Kajal',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/womenmakeup.webp',
+        cat: 'Eye Shadow',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/women3.webp',
+        cat: 'Eye Concealer',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+      {
+        img: '/style.jpg',
+        cat: 'Eyelash Extensions',
+        country: 'United States',
+        listings: 'Almost 40 Blogs'
+      },
+    ],
+    secondaryCards: [
+      {
+        img: '/aunt.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/style.jpg',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/imgfour.png',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/womenmakeup.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+      {
+        img: '/phithree.webp',
+        category: 'Fondation',
+        author: 'Padhana',
+        heading: 'Cosmetic procedures for aging skin'
+      },
+    ]
+  },
+  {
     url: 'foundation',
     mainHeading: 'Featured Foundation Blogs',
     catHeading: 'Top Choosen Categories For Foundation',

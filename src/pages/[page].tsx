@@ -4,6 +4,7 @@ import Layout from '../Components/Common/Layout/index';
 import { blogData } from '../lib/data';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 
 const Page = ({ pageData }: any) => {
@@ -12,6 +13,8 @@ const Page = ({ pageData }: any) => {
     const [isInputVisible, setInputVisible] = useState(true);
     const [numCardsToShow, setNumCardsToShow] = useState(10); // Number of cards to initially show
     const [isLoading, setIsLoading] = useState(false); // Add isLoading state
+    const router = useRouter();
+    const { pathname } = router;
 
     const handleSearch = (query: any) => {
         setSearchQuery(query);
@@ -36,6 +39,13 @@ const Page = ({ pageData }: any) => {
             setIsLoading(false); // Set loading state to false when done loading cards
         }, 1000); // Simulating a loading delay (replace with actual card loading logic)
     };
+
+
+    const isMakeupEraser = pathname === '/makeup-eraser';
+
+    console.log(pathname);
+
+
 
     return (
         <main>
@@ -69,14 +79,14 @@ const Page = ({ pageData }: any) => {
                         <div className=' pb-10 sm:pb-20 px-5 '>
                             <div key={pageData.url}>
                                 {!searchQuery && (
-                                    <div>
-                                        <p className='text-3xl sm:text-5xl font-semibold sm:text-center pb-7'>{pageData.mainHeading}</p>
-                                        <div className='hidden md:flex gap-2 items-center justify-center pb-9'>
+                                    <div className={`${isMakeupEraser ? ' hidden' : 'block'}`}>
+                                        <p className='text-3xl sm:text-5xl font-semibold sm:text-center pb-8 sm:pb-14'>{pageData.mainHeading}</p>
+                                        {/* <div className='hidden md:flex gap-2 items-center justify-center pb-9'>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 sm:block hidden'></p>
                                             <h2 className='text-gray-500'>{pageData.catHeading} </h2>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 sm:block hidden'></p>
-                                        </div>
-                                        <div className='main-cat-cards hidden md:grid grid-cols-4 gap-6 max-w-[1250px] mx-auto pb-28 '>
+                                        </div> */}
+                                        {/* <div className='main-cat-cards hidden md:grid grid-cols-4 gap-6 max-w-[1250px] mx-auto pb-28 '>
                                             {pageData.mainCards.map((newItem: any, idx: any) => (
                                                 <div
                                                     key={idx}
@@ -95,9 +105,9 @@ const Page = ({ pageData }: any) => {
                                                     <p className='text-3xl text-white font-semibold bottom-10 absolute z-[300]'>{newItem.cat}</p>
                                                 </div>
                                             ))}
-                                        </div>
-                                    </div>)}
-                                <p className='text-3xl sm:text-5xl font-semibold pb-10 md:block hidden'>Our Latest Articles</p>
+                                        </div> */}
+                                    </div>
+                                )}
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
                                     {pageData.secondaryCards
                                         .filter((secCard: any) =>

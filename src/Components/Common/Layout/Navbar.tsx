@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                     <Container>
                         <div className='flex items-center justify-between z-[1000] '>
                             <div className='z-[1000]'>
-                                <Link  href={'/'}>
+                                <Link href={'/'}>
                                     <Image
                                         src={scrollDown ? '/logo.svg' : '/primarylogo.svg'}
                                         alt={'logo'}
@@ -91,22 +91,24 @@ const Navbar: React.FC = () => {
                                             }
                                         }}
                                     >
-                                        <span
-                                            onMouseOver={() => {
-                                                setActiveDropdown(index);
-                                                if (link.mainLink === 'Foundation') {
-                                                    setIsFoundationHovered(true);
-                                                }
-                                            }}
-                                            className={`text-[#000000] text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
-                                        >
-                                            {link.mainLink}
-                                            {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (
-                                                <IoIosArrowUp
-                                                    className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
-                                                />
-                                            )}
-                                        </span>
+                                        <Link href={link.url}>
+                                            <span
+                                                onMouseOver={() => {
+                                                    setActiveDropdown(index);
+                                                    if (link.mainLink === 'Foundation') {
+                                                        setIsFoundationHovered(true);
+                                                    }
+                                                }}
+                                                className={`text-[#000000] text-[16px] flex items-center  transition-all duration-500 ${index == 0 || index == 1 ? 'hidden' : ''} ${scrollDown ? '' : 'hover:text-[#D48D78]'}`}
+                                            >
+                                                {link.mainLink}
+                                                {(link.mainLink === 'All MakeUp' || link.mainLink === 'Lips' || link.mainLink === 'Eyes' || link.mainLink === 'Makeup Tutorials') && (
+                                                    <IoIosArrowUp
+                                                        className={`ml-1 transition-all duration-500 text-sm ${activeDropdown === index ? '-rotate-40' : 'rotate-180'}`}
+                                                    />
+                                                )}
+                                            </span>
+                                        </Link>
                                         <div className={` transition-all  duration-500  ${activeDropdown === index ? 'dropdown--show' : 'dropdown--hide'
                                             }`}>
                                             {link.innerLink && activeDropdown === index && (
@@ -239,7 +241,7 @@ const links = [
     },
     {
         mainLink: 'All MakeUp',
-        url: '/',
+        url: '/blogs',
         makeUp: true,
         innerMakeUp: [
             {
@@ -333,7 +335,7 @@ const links = [
     },
     {
         mainLink: 'Makeup Eraser',
-        url: '/',
+        url: '/makeup-eraser',
         makeUp: false,
 
     },
@@ -361,25 +363,25 @@ const links = [
     },
     {
         mainLink: 'Buying Guide',
-        url: '/',
+        url: '/buying-guide',
         makeUp: false,
 
     },
     {
         mainLink: 'Blogs',
-        url: '/',
+        url: '/blogs',
         makeUp: false,
 
     },
     {
         mainLink: 'About',
-        url: '/',
+        url: '/about-us',
         makeUp: false,
 
     },
     {
         mainLink: 'Contact Us',
-        url: '/',
+        url: '/contact-us',
         makeUp: false,
 
     },
