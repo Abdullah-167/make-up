@@ -6,7 +6,7 @@ import BlogCards from './BlogCards'
 const Blog = () => {
   return (
     <Layout>
-      <div className='mt-28'></div>
+      <div className=''></div>
       <p className='text-3xl sm:text-5xl font-semibold sm:text-center pb-12 px-4'>Our Latest <span className='text-tertiary'> {`Artile's`} </span></p>
       <BlogCards />
     </Layout>
