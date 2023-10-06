@@ -94,9 +94,8 @@ const Data = () => {
             <Container>
                 <div className='flex gap-5 justify-between pb-10'>
                     <div className='md:flex gap-5'>
-                        <div className='md:block hidden relative'>
+                        {/* <div className='md:block hidden relative'>
                             <div className='pl-1 pt-4 pb-7 min-w-[160px] max-w-[200px] sticky top-10'>
-                                {/* Table of content */}
                                 <h2 className='font-semibold pl-1 pb-4'>Table Of Content</h2>
                                 <ul>
                                     {data.map((item, index) => {
@@ -117,7 +116,7 @@ const Data = () => {
                                     })}
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                         <div className='max-w-[900px]'>
                             {data.map((item, index) => {
                                 const isLastItem = index === data.length - 1;
@@ -167,7 +166,7 @@ const Data = () => {
                                         />
                                     </div>
                                     <Link href={'/'}>
-                                        <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D] block'>{item.category}</span>
+                                        <span className='text-sm pb-1 text-tertiary hover:text-[#35155D] block'>{item.category}</span>
                                     </Link>
                                     <h1 className="text-xl pb-2">
                                         {item.heading}

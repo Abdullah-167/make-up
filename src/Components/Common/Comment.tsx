@@ -150,7 +150,7 @@ const Comment = () => {
     return (
         <section>
             <Container>
-                <div className='max-w-[970px] md:pl-[180px]'>
+                <div className='max-w-[970px] '>
                     <div>
                         <p className='text-3xl  pb-2'>Leave a <span className='text-tertiary'>Comment</span> </p>
                         <p className='text-sm pb-4 max-w-[450px]'>We value your <span className=' text-tertiary'> opinion! </span> {`Please share your thoughts and the experiences you've gained after reading this article below:`}</p>
