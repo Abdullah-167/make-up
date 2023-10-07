@@ -45,7 +45,7 @@ const OurTopic: React.FC<OurTopicProps> = () => {
 
         headings?.forEach((heading) => {
             const rect = heading.getBoundingClientRect();
-            if (rect.top >= 100 && rect.bottom <= window.innerHeight - 300) {
+            if (rect.top >= 100 && rect.bottom <= window.innerHeight - 200) {
                 setActiveType(heading.getAttribute('data-type') || '');
             }
         });
