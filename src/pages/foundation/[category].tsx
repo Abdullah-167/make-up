@@ -57,8 +57,8 @@ const EyesCatPage = ({ pageData }: any) => {
     return (
         <main className=' overflow-hidden'>
             <Layout>
-                <div key={pageData.url}>
-                    <Seo title={pageData.seoTitle} descritipn={pageData.seoDescritipn} />
+                <div>
+                    {/* <Seo title={pageData.seoTitle} descritipn={pageData.seoDescritipn} /> */}
                 </div>
                 <section className=' '>
                     <form className="pt-32 pb-10 sm:pb-14">
@@ -91,11 +91,11 @@ const EyesCatPage = ({ pageData }: any) => {
                                 {!searchQuery && (
                                     <div>
                                         <p className='text-3xl sm:text-5xl font-semibold text-center sm:pb-5'>{pageData.mainHeading}</p>
-                                        {/* <div className='flex gap-2 items-center justify-center pb-9'>
+                                        <div className='flex gap-2 items-center justify-center pb-9'>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
                                             <h2 className='text-gray-500 whitespace-nowrap'>{pageData.catHeading} </h2>
                                             <p className='bg-[#4DA1F4] h-[1px] w-14 my-8 '></p>
-                                        </div> */}
+                                        </div>
                                     </div>
                                 )}
                                 <div className='sec-main-cards grid gap-x-5 gap-y-8 sm:gap-y-16 w-full'>
