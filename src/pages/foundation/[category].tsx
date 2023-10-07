@@ -58,7 +58,7 @@ const EyesCatPage = ({ pageData }: any) => {
         <main className=' overflow-hidden'>
             <Layout>
                 <div>
-                    {/* <Seo title={pageData.seoTitle} descritipn={pageData.seoDescritipn} /> */}
+                    <Seo title={pageData.seoTitle} descritipn={pageData.seoDescritipn} />
                 </div>
                 <section className=' '>
                     <form className="pt-32 pb-10 sm:pb-14">
