@@ -6,14 +6,14 @@ const TermsConditions = () => {
         <main>
             <Layout>
                 <header className={'pt-36'}>
-                    <h1 className='text-center text-5xl font-semibold pb-10'>Terms <span className=' text-tertiary'> & </span> Conditions</h1>
+                    <h1 className='text-center text-3xl sm:text-5xl font-semibold pb-10'>Terms <span className=' text-tertiary'> & </span> Conditions</h1>
                 </header>
                 <section className='pb-20'>
                     <div className='max-w-[1100px] mx-auto'>
                         {data.map((item, index) => {
                             return (
                                 <div className='pb-7' key={index}>
-                                    <h2 className='text-2xl font-semibold pb-3'>{item.heading}</h2>
+                                    <h2 className='text-xl font-semibold pb-3'>{item.heading}</h2>
                                     <div className=''>{item.para}</div>
                                     {item.isList && (
                                         <ul className='pt-3 ml-4 text-black'>

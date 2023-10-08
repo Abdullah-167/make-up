@@ -6,22 +6,29 @@ const PrivacyPolicy = () => {
         <main>
             <Layout>
                 <header className={'pt-36'}>
-                    <h1 className='text-center text-5xl font-semibold pb-10'>Privacy  <span className=' text-tertiary'> Policy </span> </h1>
+                    <h1 className='text-center text-3xl sm:text-5xl font-semibold pb-10'>Privacy  <span className=' text-tertiary'> Policy </span> </h1>
                 </header>
                 <section className='pb-20'>
                     <div className='max-w-[1100px] mx-auto'>
                         {data.map((item, index) => {
                             return (
                                 <div className='pb-7' key={index}>
-                                    <h2 className='text-2xl font-semibold pb-3'>{item.heading}</h2>
+                                    <h2 className='text-xl font-semibold pb-3'>{item.heading}</h2>
                                     <div className=''>{item.para}</div>
                                     {item.isList && (
                                         <ul className='pt-3 ml-4 text-black'>
-                                            <li className=' list-disc'>{item.listOne}</li>
-                                            <li className=' list-disc'>{item.listTwo}</li>
-                                            <li className=' list-disc'>{item.listThree}</li>
-                                            <li className=' list-disc'>{item.listFour}</li>
-                                            <li className=' list-disc'>{item.listFive}</li>
+                                            {item.listOne && (
+                                                <li className=' list-disc'>{item.listOne}</li>
+                                            )}
+                                            {item.listTwo && (
+                                                <li className=' list-disc'>{item.listTwo}</li>
+                                            )}
+                                            {item.listThree && (
+                                                <li className=' list-disc'>{item.listThree}</li>
+                                            )}
+                                            {item.listFour && (
+                                                <li className=' list-disc'>{item.listFour}</li>
+                                            )}
                                         </ul>
                                     )}
                                 </div>
@@ -40,70 +47,96 @@ export default PrivacyPolicy;
 const data = [
     {
         isList: false,
-        para: `Welcome to Evoce Beauty. By accessing or using our website (the "Service"), you agree to comply with and be bound by the following terms and conditions. Please read these terms carefully before using our Service.`
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
+        para: `Evoce Beauty is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you access or use our website (the "Service").`
     },
     {
-        heading: `Acceptance of Terms`,
-        isList: false,
-        para: `By accessing or using Evoce Beauty, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please refrain from using our website.`
-    },
-    {
-        heading: ` Privacy Policy`,
-        isList: false,
-        para: (<p>
-            Your use of Evoce Beauty is also governed by our Privacy Policy, which can be found [here](link to your Privacy Policy). Please review our Privacy Policy to understand how we collect, use, and protect your personal information.`
-        </p>)
-    },
-    {
-        heading: `User Conduct`,
+        heading: `Information We Collect`,
         isList: true,
-        para: (<p>
-            You agree to use Evoce Beauty in accordance with all applicable laws and regulations. You shall not engage in any conduct that:
-        </p>),
-        listOne: 'Violates the rights of others.',
-        listTwo: 'Harasses or threatens other users.',
-        listThree: 'Promotes illegal activities.',
-        listFour: 'Impersonates any person or entity.',
-        listFive: 'Contains viruses, malware, or harmful code.',
+        islistTwo: true,
+        islistThree: true,
+        islistFour: false,
+        para: `We may collect the following types of information when you use Evoce Beauty:`,
+        listOne: (<li> <strong>Personal Information:</strong> This may include your name, email address, postal address, and other identifying information when provided voluntarily. </li>),
+        listTwo: (<li> <strong>Usage Information:</strong> We collect data about how you use our website, including your IP address, browser type, device information, and usage patterns. </li>),
+        listThree: (<li> <strong>Cookies:</strong>  We use cookies to track user interactions with our website. You can manage cookie preferences through your browser settings. </li>),
+
     },
     {
-        heading: ` Intellectual Property`,
-        isList: false,
+        heading: ` How We Use Your Information`,
+        isList: true,
+        islistTwo: true,
+        islistThree: true,
+        islistFour: true,
         para: (<p>
-            All content on Evoce Beauty, including text, images, logos, and trademarks, is protected by intellectual property rights and belongs to Evoce Beauty or its licensors. You may not use, reproduce, or distribute our content without our express written consent.
+            We use your information for the following purposes:
+        </p>),
+        listOne: 'To provide and improve our services.',
+        listTwo: 'To respond to your inquiries or requests.',
+        listThree: 'To send you promotional emails or newsletters if you have opted in.',
+        listFour: 'To analyze and optimize the performance of our website.',
+    },
+    {
+        heading: `Your Choices`,
+        isList: true,
+        islistTwo: true,
+        islistThree: true,
+        islistFour: false,
+        para: (<p>
+            You have the following choices regarding your personal information:
+        </p>),
+        listOne: 'You can access, update, or delete your personal information by contacting us.',
+        listTwo: 'You can opt-out of receiving promotional emails at any time.',
+        listThree: 'You can disable cookies through your browser settings.',
+    },
+    {
+        heading: `  Data Security`,
+        isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
+        para: (<p>
+            We employ reasonable security measures to protect your personal information. However, no method of data transmission over the internet is completely secure.
         </p>),
     },
     {
-        heading: `  User-Generated Content`,
+        heading: ` Children's Privacy`,
         isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
         para: (<p>
-            If you submit or post content on Evoce Beauty, you grant us a non-exclusive, royalty-free, worldwide, perpetual license to use, reproduce, modify, adapt, and distribute your content on our website and in promotional materials.
+            Evoce Beauty is not intended for children under the age of 13. We do not knowingly collect personal information from children.
         </p>),
     },
     {
         heading: ` Third-Party Links`,
         isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
         para: (<p>
             Evoce Beauty may contain links to third-party websites. We are not responsible for the content or practices of these websites. Accessing these third-party links is at your own risk.
         </p>),
     },
     {
-        heading: `Changes to Terms and Conditions`,
+        heading: `Changes to this Privacy Policy`,
         isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
         para: (<p>
-            We reserve the right to modify these Terms and Conditions at any time. It is your responsibility to regularly review this page for updates. Your continued use of Evoce Beauty after changes have been made constitutes your acceptance of the revised terms.
-        </p>),
-    },
-    {
-        heading: `Termination`,
-        isList: false,
-        para: (<p>
-            We reserve the right to terminate or suspend your access to Evoce Beauty at our discretion, without notice, for any violation of these Terms and Conditions or for any other reason.
+            We may update this Privacy Policy from time to time. The revised policy will be posted on our website, and the date of the latest update will be indicated at the top of the policy.
         </p>),
     },
     {
         heading: `Contact Us`,
         isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
         para: (<p>
             If you have any questions or concerns regarding these Terms and Conditions, please contact us at contact@email.com.
         </p>),
@@ -111,8 +144,11 @@ const data = [
     {
         heading: ` Governing Law`,
         isList: false,
+        islistTwo: false,
+        islistThree: false,
+        islistFour: false,
         para: (<p>
-            These Terms and Conditions are governed by and construed in accordance with the laws of United States, without regard to its conflict of law principles.
+            These Privcay Policy are governed by and construed in accordance with the laws of United States, without regard to its conflict of law principles.
         </p>),
     },
 ]
