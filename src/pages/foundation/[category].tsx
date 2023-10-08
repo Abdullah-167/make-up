@@ -168,7 +168,6 @@ const EyesCatPage = ({ pageData }: any) => {
                                 </span>
                             )}
                         </div>
-
                     </div>
                 </section>
             </Layout>
