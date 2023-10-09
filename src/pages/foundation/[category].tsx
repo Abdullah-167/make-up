@@ -107,7 +107,7 @@ const EyesCatPage = ({ pageData }: any) => {
                                         .map((secCard: any, secIdx: any) => (
                                             <div className='flex gap-3 w-full' key={secIdx}>
                                                 <div
-                                                    className={`cursor-pointer rounded-md sm:max-w-[280px] min-w-[280px] `}
+                                                    className={`cursor-pointer rounded-md w-full sm:max-w-[280px] min-w-[280px] `}
                                                     key={secIdx}
                                                 >
                                                     <div className={`overflow-hidden pb-2 `}>

@@ -25,14 +25,14 @@ const LifeHack = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5'>
                         {data.map((item, index) => (
                             <div
-                                className={`blog-heading cursor-pointer ${index === 0 ? ' md:block hidden md:row-span-2 lg:row-span-3' : 'max-h-[]'
+                                className={` cursor-pointer ${index === 0 ? ' md:block hidden md:row-span-2 lg:row-span-3' : 'max-h-[]'
                                     }`}
                                 key={index}
                             >
                                 <div className={`overflow-hidden pb-2 ${index === 0 ? 'md:w-full md:h-full md:max-h-[545px] lg:max-h-[498px] xl:max-h-[589px]' : ''}`}>
                                     <Image className={`rounded-md transition-all duration-500 hover:scale-105 w-full h-full object-cover  ${index > 0 ? 'max-h-[300px] md:max-h-[236px]' : ' lg:max-h-[460px] xl:max-h-[590px]'}`} src={item.img} alt={'lifehack-img'} width={500} height={500} />
                                 </div>
-                                <Link href={'/'}> <span className='text-sm pb-1 text-[#D48D78] hover:text-[#35155D]'>{item.category}</span></Link>
+                                <Link href={'/'}> <span className='text-sm pb-1 text-tertiary'>{item.category}</span></Link>
                                 <div className='flex justify-between items-center pb-1 text-gray-500'>
                                     <p className='text-sm'>By {item.author}</p>
                                     <p className='text-sm'>  {formattedDate} </p>

@@ -75,7 +75,7 @@ export const haircatData = [
         ]
     },
     {
-        url: 'shampoo-and-sonditioner',
+        url: 'shampoo-and-conditioner',
         mainHeading: 'Featured Shampoo And Conditioner Blogs',
         catHeading: 'Top Choosen Categories For Eyes',
         mainCards: [
